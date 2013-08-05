@@ -12,8 +12,6 @@
 		6D97114C16F7C36600B50B57 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D97114B16F7C36600B50B57 /* Default-568h@2x.png */; };
 		6D97114E16F7C60A00B50B57 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D97114D16F7C60A00B50B57 /* Parse.framework */; };
 		74D131E61582A7420065F1D2 /* HuntersEdge-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74D131E51582A7420065F1D2 /* HuntersEdge-Info.plist */; };
-		74D132031582A8E90065F1D2 /* Anywall.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D131ED1582A8E90065F1D2 /* Anywall.png */; };
-		74D132041582A8E90065F1D2 /* Anywall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D131EE1582A8E90065F1D2 /* Anywall@2x.png */; };
 		74D132051582A8E90065F1D2 /* bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D131EF1582A8E90065F1D2 /* bar.png */; };
 		74D132061582A8E90065F1D2 /* bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D131F01582A8E90065F1D2 /* bar@2x.png */; };
 		74D132071582A8E90065F1D2 /* blueBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D131F11582A8E90065F1D2 /* blueBubble.png */; };
@@ -91,8 +89,6 @@
 		6D97114D16F7C60A00B50B57 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		74D131E51582A7420065F1D2 /* HuntersEdge-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HuntersEdge-Info.plist"; sourceTree = "<group>"; };
 		74D131E71582A7550065F1D2 /* HuntersEdge-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "HuntersEdge-Prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		74D131ED1582A8E90065F1D2 /* Anywall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Anywall.png; sourceTree = "<group>"; };
-		74D131EE1582A8E90065F1D2 /* Anywall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Anywall@2x.png"; sourceTree = "<group>"; };
 		74D131EF1582A8E90065F1D2 /* bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar.png; sourceTree = "<group>"; };
 		74D131F01582A8E90065F1D2 /* bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar@2x.png"; sourceTree = "<group>"; };
 		74D131F11582A8E90065F1D2 /* blueBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueBubble.png; sourceTree = "<group>"; };
@@ -108,7 +104,7 @@
 		74D131FB1582A8E90065F1D2 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		74D131FC1582A8E90065F1D2 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		74D131FD1582A8E90065F1D2 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		74D131FE1582A8E90065F1D2 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		74D131FE1582A8E90065F1D2 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = text; path = iTunesArtwork; sourceTree = "<group>"; };
 		74D131FF1582A8E90065F1D2 /* just_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = just_background.png; sourceTree = "<group>"; };
 		74D132001582A8E90065F1D2 /* just_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "just_background@2x.png"; sourceTree = "<group>"; };
 		74D132011582A8E90065F1D2 /* Map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Map.png; sourceTree = "<group>"; };
@@ -215,8 +211,6 @@
 				A40EDB9417B00C38005CB9E5 /* second@2x.png */,
 				A40EDB9517B00C38005CB9E5 /* textfield_background.png */,
 				A40EDB9617B00C38005CB9E5 /* textfield_background@2x.png */,
-				74D131ED1582A8E90065F1D2 /* Anywall.png */,
-				74D131EE1582A8E90065F1D2 /* Anywall@2x.png */,
 				74D131EF1582A8E90065F1D2 /* bar.png */,
 				74D131F01582A8E90065F1D2 /* bar@2x.png */,
 				74D131F11582A8E90065F1D2 /* blueBubble.png */,
@@ -295,7 +289,7 @@
 				E56E83FD14D72E1100E856AB /* Supporting Files */,
 			);
 			name = HuntersEdge;
-			path = AnyWall;
+			path = HuntersEdge;
 			sourceTree = "<group>";
 		};
 		E56E83FD14D72E1100E856AB /* Supporting Files */ = {
@@ -405,7 +399,7 @@
 			dependencies = (
 			);
 			name = HuntersEdge;
-			productName = AnyWall;
+			productName = HuntersEdge;
 			productReference = E56E83F214D72E1100E856AB /* HuntersEdge.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -450,8 +444,6 @@
 				2F3BD81214F20F9E00BDC051 /* Default@2x.png in Resources */,
 				2F3BD81414F2117100BDC051 /* Default.png in Resources */,
 				74D131E61582A7420065F1D2 /* HuntersEdge-Info.plist in Resources */,
-				74D132031582A8E90065F1D2 /* Anywall.png in Resources */,
-				74D132041582A8E90065F1D2 /* Anywall@2x.png in Resources */,
 				74D132051582A8E90065F1D2 /* bar.png in Resources */,
 				74D132061582A8E90065F1D2 /* bar@2x.png in Resources */,
 				74D132071582A8E90065F1D2 /* blueBubble.png in Resources */,
@@ -603,7 +595,7 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AnyWall/HuntersEdge-Prefix.pch";
+				GCC_PREFIX_HEADER = "HuntersEdge/HuntersEdge-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = NO;
@@ -614,7 +606,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = NO;
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_LABEL = NO;
-				INFOPLIST_FILE = "$(SRCROOT)/AnyWall/HuntersEdge-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/HuntersEdge/HuntersEdge-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -629,7 +621,7 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AnyWall/HuntersEdge-Prefix.pch";
+				GCC_PREFIX_HEADER = "HuntersEdge/HuntersEdge-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = NO;
@@ -640,7 +632,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = NO;
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_LABEL = NO;
-				INFOPLIST_FILE = "$(SRCROOT)/AnyWall/HuntersEdge-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/HuntersEdge/HuntersEdge-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -681,7 +673,7 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AnyWall/HuntersEdge-Prefix.pch";
+				GCC_PREFIX_HEADER = "HuntersEdge/HuntersEdge-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = NO;
@@ -692,7 +684,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = NO;
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_LABEL = NO;
-				INFOPLIST_FILE = "$(SRCROOT)/AnyWall/HuntersEdge-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/HuntersEdge/HuntersEdge-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -734,7 +726,7 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AnyWall/HuntersEdge-Prefix.pch";
+				GCC_PREFIX_HEADER = "HuntersEdge/HuntersEdge-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = NO;
@@ -745,7 +737,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = NO;
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_LABEL = NO;
-				INFOPLIST_FILE = "$(SRCROOT)/AnyWall/HuntersEdge-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/HuntersEdge/HuntersEdge-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
