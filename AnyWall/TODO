@@ -1,0 +1,33 @@
+================ TO DO LIST ================
+
+1) Add Journal ViewController X
+2) Add Journal backend to parse / configure X
+3) Add Map press gesture functionality (UILongGestureRecognizer)  X
+4) Add support for multiple types of pin drops X
+	- Green = Currently viewed pin notes X
+	- Red = Recently added Animal (<30 mins? 1 hr?) X (Still need to add timer)
+	- Purple = Animal spotted (1+ hours ago)
+	- Blue (Dot) = current user location X
+	- Yellow (Dots)  = Other user location
+	- Black = General note pin
+5) Add compass to MapView (figure out how to do this)?
+6) Have Brittni make:
+	- App Icon
+	- UITabBar images
+		- Journal  (book)
+		- Map (pin marker)
+		- Group Chat ( ??? Multiple people like Fitivity?)
+		- Settings (gear)
+	-Logo
+	- Splash screen
+	- Any other custom images?  Buttons?  
+7)Add group chat functionality (In progress)
+8) Wednesday - Discuss 
+	- Possibilities of profile page?
+	- Ditch alarm clock functionality? (Built-in phone, keep app simple)
+	- Journal pages as a UITableView (List) instead of a page flip
+		-This is more efficient, can see all entries in a single table
+		-Can probably still have flip functionality 
+			-by utilizing UIGestureSwipeRecognizer
+9) Add login with Facebook functionality
+	
