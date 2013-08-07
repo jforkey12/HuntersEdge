@@ -233,6 +233,10 @@
 	}
 	
 	if (selectedTag == 2){
+		for (UIView *subview in self.view.subviews) {
+			if (subview != tabBar)
+				[subview removeFromSuperview];
+		}
 		if(thirdTab == nil)
 			self.thirdTab = [[HEChatRoomViewController alloc] initWithNibName:@"HEChatRoomViewController" bundle:nil];
 		[self.view insertSubview:thirdTab.view belowSubview:tabBar];
@@ -241,6 +245,8 @@
 			[currentTab.view removeFromSuperview];
 		}
 		currentTab = thirdTab;
+		[self.view insertSubview:thirdTab.view belowSubview:tabBar];
+		
 	}
 
 	if (selectedTag == 3) {
