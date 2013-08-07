@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D97114E16F7C60A00B50B57 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D97114D16F7C60A00B50B57 /* Parse.framework */; };
 		74D131E61582A7420065F1D2 /* HuntersEdge-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74D131E51582A7420065F1D2 /* HuntersEdge-Info.plist */; };
 		74D132051582A8E90065F1D2 /* bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D131EF1582A8E90065F1D2 /* bar.png */; };
 		74D132061582A8E90065F1D2 /* bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D131F01582A8E90065F1D2 /* bar@2x.png */; };
@@ -30,7 +29,6 @@
 		74D132171582A8E90065F1D2 /* Map.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D132011582A8E90065F1D2 /* Map.png */; };
 		74D132181582A8E90065F1D2 /* Map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D132021582A8E90065F1D2 /* Map@2x.png */; };
 		A40EDB8017AFC488005CB9E5 /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = A40EDB7F17AFC488005CB9E5 /* TODO */; };
-		A40EDB8317B00AAE005CB9E5 /* HEChatRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40EDB8217B00AAE005CB9E5 /* HEChatRoomViewController.m */; };
 		A40EDB8617B00B42005CB9E5 /* chatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A40EDB8517B00B42005CB9E5 /* chatCell.m */; };
 		A40EDB8C17B00BDC005CB9E5 /* HEChatRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A40EDB8B17B00BDC005CB9E5 /* HEChatRoomViewController.xib */; };
 		A40EDB9717B00C38005CB9E5 /* background_pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = A40EDB8D17B00C38005CB9E5 /* background_pattern.png */; };
@@ -47,8 +45,11 @@
 		A439308717B2BDC300100010 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A439308617B2BDC300100010 /* Default-568h@2x.png */; };
 		A439308917B2BDCA00100010 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A439308817B2BDCA00100010 /* Default@2x.png */; };
 		A439308B17B2BDD000100010 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A439308A17B2BDD000100010 /* Default.png */; };
+		A439309517B2DE5B00100010 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A439309417B2DE5B00100010 /* Reachability.m */; };
+		A439309817B2DE7900100010 /* HEChatRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A439309717B2DE7900100010 /* HEChatRoomViewController.m */; };
 		A446C51717ABFD1800E6553F /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A446C51617ABFD1800E6553F /* MainViewController.xib */; };
 		A446C51917AD513300E6553F /* hunting-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A446C51817AD513300E6553F /* hunting-background@2x.png */; };
+		A4773EA617B2EA32000E4CAC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4773EA517B2EA32000E4CAC /* Parse.framework */; };
 		C4FD6130172751E200F61563 /* HEWallPostsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E572726A14E0807F004A9423 /* HEWallPostsTableViewController.m */; };
 		E5458B6614D77BEA003BE4FF /* HESettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5458B6414D77BEA003BE4FF /* HESettingsViewController.m */; };
 		E5458B6714D77BEA003BE4FF /* HESettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5458B6514D77BEA003BE4FF /* HESettingsViewController.xib */; };
@@ -84,7 +85,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6D97114D16F7C60A00B50B57 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		74D131E51582A7420065F1D2 /* HuntersEdge-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HuntersEdge-Info.plist"; sourceTree = "<group>"; };
 		74D131E71582A7550065F1D2 /* HuntersEdge-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "HuntersEdge-Prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		74D131EF1582A8E90065F1D2 /* bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar.png; sourceTree = "<group>"; };
@@ -108,8 +108,6 @@
 		74D132011582A8E90065F1D2 /* Map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Map.png; sourceTree = "<group>"; };
 		74D132021582A8E90065F1D2 /* Map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Map@2x.png"; sourceTree = "<group>"; };
 		A40EDB7F17AFC488005CB9E5 /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
-		A40EDB8117B00AAE005CB9E5 /* HEChatRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEChatRoomViewController.h; sourceTree = "<group>"; };
-		A40EDB8217B00AAE005CB9E5 /* HEChatRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEChatRoomViewController.m; sourceTree = "<group>"; };
 		A40EDB8417B00B42005CB9E5 /* chatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chatCell.h; sourceTree = "<group>"; };
 		A40EDB8517B00B42005CB9E5 /* chatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chatCell.m; sourceTree = "<group>"; };
 		A40EDB8B17B00BDC005CB9E5 /* HEChatRoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HEChatRoomViewController.xib; sourceTree = "<group>"; };
@@ -127,8 +125,13 @@
 		A439308617B2BDC300100010 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A439308817B2BDCA00100010 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A439308A17B2BDD000100010 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		A439309317B2DE5B00100010 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		A439309417B2DE5B00100010 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		A439309617B2DE7900100010 /* HEChatRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEChatRoomViewController.h; sourceTree = "<group>"; };
+		A439309717B2DE7900100010 /* HEChatRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEChatRoomViewController.m; sourceTree = "<group>"; };
 		A446C51617ABFD1800E6553F /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		A446C51817AD513300E6553F /* hunting-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hunting-background@2x.png"; sourceTree = "<group>"; };
+		A4773EA517B2EA32000E4CAC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		E5458B6314D77BEA003BE4FF /* HESettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HESettingsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		E5458B6414D77BEA003BE4FF /* HESettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HESettingsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E5458B6514D77BEA003BE4FF /* HESettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HESettingsViewController.xib; sourceTree = "<group>"; };
@@ -193,13 +196,22 @@
 				E5CAAFF814D7376500D97A18 /* MapKit.framework in Frameworks */,
 				E56E83F714D72E1100E856AB /* UIKit.framework in Frameworks */,
 				E56E83F914D72E1100E856AB /* Foundation.framework in Frameworks */,
-				6D97114E16F7C60A00B50B57 /* Parse.framework in Frameworks */,
+				A4773EA617B2EA32000E4CAC /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A439308C17B2D7C000100010 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A439309317B2DE5B00100010 /* Reachability.h */,
+				A439309417B2DE5B00100010 /* Reachability.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		E526A82D14F331D40074109C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,7 +275,7 @@
 		E56E83F514D72E1100E856AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6D97114D16F7C60A00B50B57 /* Parse.framework */,
+				A4773EA517B2EA32000E4CAC /* Parse.framework */,
 				E5C3304314D9C3C900089B64 /* QuartzCore.framework */,
 				E5C3304114D9C3C200089B64 /* Security.framework */,
 				E5C3303F14D9C3BC00089B64 /* libz.1.1.3.dylib */,
@@ -285,6 +297,7 @@
 			children = (
 				E56E840514D72E1100E856AB /* HEAppDelegate.h */,
 				E56E840614D72E1100E856AB /* HEAppDelegate.m */,
+				A439308C17B2D7C000100010 /* Utils */,
 				E5743F2A14E3024B004BBD5C /* Models */,
 				E5AF78F514E0C25C005B6234 /* Views */,
 				E5CAAFF614D7342200D97A18 /* Controllers */,
@@ -364,8 +377,8 @@
 		E5F7574B14DB643A008CCAFE /* HuntersEdge View and Posts */ = {
 			isa = PBXGroup;
 			children = (
-				A40EDB8117B00AAE005CB9E5 /* HEChatRoomViewController.h */,
-				A40EDB8217B00AAE005CB9E5 /* HEChatRoomViewController.m */,
+				A439309617B2DE7900100010 /* HEChatRoomViewController.h */,
+				A439309717B2DE7900100010 /* HEChatRoomViewController.m */,
 				E5CAAFF114D733DC00D97A18 /* HEWallViewController.h */,
 				E5CAAFF214D733DC00D97A18 /* HEWallViewController.m */,
 				E5458B6914D8B2E3003BE4FF /* HEWallPostCreateViewController.h */,
@@ -505,8 +518,9 @@
 				E5743F2D14E302A0004BBD5C /* HECircleView.m in Sources */,
 				E554D5C314E32EFB008D027A /* HEPost.m in Sources */,
 				C4FD6130172751E200F61563 /* HEWallPostsTableViewController.m in Sources */,
-				A40EDB8317B00AAE005CB9E5 /* HEChatRoomViewController.m in Sources */,
 				A40EDB8617B00B42005CB9E5 /* chatCell.m in Sources */,
+				A439309517B2DE5B00100010 /* Reachability.m in Sources */,
+				A439309817B2DE7900100010 /* HEChatRoomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

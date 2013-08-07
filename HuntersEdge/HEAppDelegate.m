@@ -36,6 +36,8 @@ static NSString * const defaultsLocationKey = @"currentLocation";
 	
 	[Parse setApplicationId:@"R17iFzDeT9M0vddj7pVsS1JSJMZquqO6TNzq01nB" clientKey:@"bm2XdDAcRqyoy9OKmnEQSzl1VCFtuwCuGAofEye8"];
 	
+	[PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 	
@@ -48,6 +50,11 @@ static NSString * const defaultsLocationKey = @"currentLocation";
 	// Grab values from NSUserDefaults:
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	
+    if (![userDefaults stringForKey:@"chatName"]) {
+        // first time it's run, create a userDefault
+        [userDefaults setObject:@"Chat Name" forKey:@"chatName"];
+        [userDefaults synchronize];
+		}
 	// Set the global tint on the navigation bar
 /*	[[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:200.0f/255.0f green:83.0f/255.0f blue:70.0f/255.0f alpha:1.0f]];
 	[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bar.png"] forBarMetrics:UIBarMetricsDefault];

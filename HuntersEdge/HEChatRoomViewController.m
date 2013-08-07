@@ -44,7 +44,16 @@ BOOL isFirstShown = YES;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-	
+    Reachability *reach = [Reachability reachabilityForInternetConnection]; 
+	NetworkStatus status = [reach currentReachabilityStatus];
+	if (status == NotReachable){
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network"
+														message:[self stringFromStatus: status]
+													   delegate:self
+											  cancelButtonTitle:@"OK"
+											  otherButtonTitles:nil];
+		[alert show];
+	}
     className = @"chatroom";
 	//userName = @"John Appleseed";
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -182,16 +191,22 @@ BOOL isFirstShown = YES;
 
 - (void)loadLocalChat
 {
+	NSLog(@"Creating query object");
     PFQuery *query = [PFQuery queryWithClassName:className];
-    
-    
+        
     // If no objects are loaded in memory, we look to the cache first to fill the table
     // and then subsequently do a query against the network.
+
+	NSLog(@"B");
     if ([chatData count] == 0) {
         query.cachePolicy = kPFCachePolicyCacheThenNetwork;
         [query orderByAscending:@"createdAt"];
         NSLog(@"Trying to retrieve from cache");
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+		
+		// !!!! THIS SHIT NEEDS TO BE FIXED.  CAUSES NSINCONSISTENCY ERROR
+		// CAN NOT HAVE TWO QUERIES SIMULTANEOUSLY ON THE SAME THREAD ??
+		
+       /* [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
                 // The find succeeded.
                 NSLog(@"Successfully retrieved %d chats from cache.", objects.count);
@@ -199,10 +214,12 @@ BOOL isFirstShown = YES;
                 [chatData addObjectsFromArray:objects];
                 [chatTable reloadData];
             } else {
+				NSLog(@"C");
+
                 // Log details of the failure
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
-        }];
+        }]; */
     }
     __block int totalNumberOfEntries = 0;
     [query orderByAscending:@"createdAt"];
@@ -221,6 +238,7 @@ BOOL isFirstShown = YES;
                     theLimit = totalNumberOfEntries-[chatData count];
                 }
                 query.limit = [NSNumber numberWithInt:theLimit];
+				
                 [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                     if (!error) {
                         // The find succeeded.
@@ -351,6 +369,26 @@ BOOL isFirstShown = YES;
 	
 	return [NSDate date]; // should return date data source was last changed
 	
+}
+
+#pragma mark - Connections
+
+- (NSString *)stringFromStatus:(NetworkStatus ) status {
+	NSString *string; switch(status) {
+		case NotReachable:
+			string = @"You are not connected to the internet";
+			break;
+		case ReachableViaWiFi:
+			string = @"Reachable via WiFi";
+			break;
+		case ReachableViaWWAN:
+			string = @"Reachable via WWAN";
+			break;
+		default:
+            string = @"Unknown connection";
+            break;
+	}
+	return string;
 }
 
 #pragma mark - Chat name dialog

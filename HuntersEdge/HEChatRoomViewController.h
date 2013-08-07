@@ -6,10 +6,10 @@
 //  Copyright (c) 2013. All rights reserved.
 //
 
-
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "chatCell.h"
+#import "Reachability.h"
 
 @interface HEChatRoomViewController : UIViewController <UITextFieldDelegate,UITableViewDelegate, UITableViewDataSource,PF_EGORefreshTableHeaderDelegate>
 {
@@ -33,5 +33,6 @@
 
 - (void)loadLocalChat;
 
+- (NSString *)stringFromStatus:(NetworkStatus )status;
 -(void)presentChatNameDialog;
 @end
