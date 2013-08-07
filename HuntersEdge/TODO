@@ -2,6 +2,7 @@
 
 1) Add Journal ViewController X
 2) Add Journal backend to parse / configure X
+	-Share on Facebook, Twitter, Instagram
 3) Add Map press gesture functionality (UILongGestureRecognizer)  X
 4) Add support for multiple types of pin drops X
 	- Green = Currently viewed pin notes X
@@ -23,11 +24,12 @@
 	- Any other custom images?  Buttons?  
 7)Add group chat functionality (In progress)
 8) Wednesday - Discuss 
-	- Possibilities of profile page?
-	- Ditch alarm clock functionality? (Built-in phone, keep app simple)
+	- Possibilities of profile page - Include GameCenter
+	- Reminder - Push notification or alarm clarm?  
+		-Settings
 	- Journal pages as a UITableView (List) instead of a page flip
 		-This is more efficient, can see all entries in a single table
 		-Can probably still have flip functionality 
 			-by utilizing UIGestureSwipeRecognizer
 9) Add login with Facebook functionality
-	
+

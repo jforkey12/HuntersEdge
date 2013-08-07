@@ -7,6 +7,7 @@
 //
 
 #import "HEChatRoomViewController.h"
+#import "HEWallViewController.h"
 
 #define TABBAR_HEIGHT 49.0f
 #define TEXTFIELD_HEIGHT 70.0f

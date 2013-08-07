@@ -107,7 +107,7 @@ static uint16_t const kHESettingsTableViewLogoutNumberOfRows = 1;
 			distance = 1000;
 			break;
 		case kHESettingsTableViewDistanceSection1MileRow:
-			distance = 5280;
+			distance = 528000;
 			break;
 		case kHESettingsTableViewDistanceNumberOfRows: // never reached.
 		default:
