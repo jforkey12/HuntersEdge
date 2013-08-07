@@ -93,8 +93,9 @@
 	}
 
 	// Data prep:
+	
 	HEAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-	CLLocationCoordinate2D currentCoordinate = appDelegate.currentLocation.coordinate;
+	CLLocationCoordinate2D currentCoordinate = appDelegate.pinDropLocation.coordinate;
 	PFGeoPoint *currentPoint = [PFGeoPoint geoPointWithLatitude:currentCoordinate.latitude longitude:currentCoordinate.longitude];
 	PFUser *user = [PFUser currentUser];
 
@@ -108,7 +109,7 @@
 	[readOnlyACL setPublicReadAccess:YES];
 	[readOnlyACL setPublicWriteAccess:NO];
 	[postObject setACL:readOnlyACL];
-	[postObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+	[postObject saveEventually:^(BOOL succeeded, NSError *error) {
 		if (error) {
 			NSLog(@"Couldn't save!");
 			NSLog(@"%@", error);

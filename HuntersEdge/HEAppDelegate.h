@@ -49,6 +49,8 @@ static NSString * const kHEWallCantViewPost = @"Can’t view post! Get closer.";
 
 @property (nonatomic, assign) CLLocationAccuracy filterDistance;
 @property (nonatomic, strong) CLLocation *currentLocation;
+@property (nonatomic, strong) CLLocation *pinDropLocation;
+
 @property (nonatomic, strong) UITabBarController *tabBarController;
 
 - (void)presentWelcomeViewController;

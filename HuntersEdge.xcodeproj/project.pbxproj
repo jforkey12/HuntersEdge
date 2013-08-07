@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F3BD81214F20F9E00BDC051 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F3BD81114F20F9E00BDC051 /* Default@2x.png */; };
-		2F3BD81414F2117100BDC051 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F3BD81314F2117100BDC051 /* Default.png */; };
-		6D97114C16F7C36600B50B57 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D97114B16F7C36600B50B57 /* Default-568h@2x.png */; };
 		6D97114E16F7C60A00B50B57 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D97114D16F7C60A00B50B57 /* Parse.framework */; };
 		74D131E61582A7420065F1D2 /* HuntersEdge-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74D131E51582A7420065F1D2 /* HuntersEdge-Info.plist */; };
 		74D132051582A8E90065F1D2 /* bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D131EF1582A8E90065F1D2 /* bar.png */; };
@@ -46,6 +43,10 @@
 		A40EDB9E17B00C38005CB9E5 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A40EDB9417B00C38005CB9E5 /* second@2x.png */; };
 		A40EDB9F17B00C38005CB9E5 /* textfield_background.png in Resources */ = {isa = PBXBuildFile; fileRef = A40EDB9517B00C38005CB9E5 /* textfield_background.png */; };
 		A40EDBA017B00C38005CB9E5 /* textfield_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A40EDB9617B00C38005CB9E5 /* textfield_background@2x.png */; };
+		A439308517B136E300100010 /* social-media-login-retna1.png in Resources */ = {isa = PBXBuildFile; fileRef = A439308417B136E300100010 /* social-media-login-retna1.png */; };
+		A439308717B2BDC300100010 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A439308617B2BDC300100010 /* Default-568h@2x.png */; };
+		A439308917B2BDCA00100010 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A439308817B2BDCA00100010 /* Default@2x.png */; };
+		A439308B17B2BDD000100010 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A439308A17B2BDD000100010 /* Default.png */; };
 		A446C51717ABFD1800E6553F /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A446C51617ABFD1800E6553F /* MainViewController.xib */; };
 		A446C51917AD513300E6553F /* hunting-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A446C51817AD513300E6553F /* hunting-background@2x.png */; };
 		C4FD6130172751E200F61563 /* HEWallPostsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E572726A14E0807F004A9423 /* HEWallPostsTableViewController.m */; };
@@ -83,9 +84,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2F3BD81114F20F9E00BDC051 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
-		2F3BD81314F2117100BDC051 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
-		6D97114B16F7C36600B50B57 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		6D97114D16F7C60A00B50B57 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		74D131E51582A7420065F1D2 /* HuntersEdge-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HuntersEdge-Info.plist"; sourceTree = "<group>"; };
 		74D131E71582A7550065F1D2 /* HuntersEdge-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "HuntersEdge-Prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -125,6 +123,10 @@
 		A40EDB9417B00C38005CB9E5 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		A40EDB9517B00C38005CB9E5 /* textfield_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textfield_background.png; sourceTree = "<group>"; };
 		A40EDB9617B00C38005CB9E5 /* textfield_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "textfield_background@2x.png"; sourceTree = "<group>"; };
+		A439308417B136E300100010 /* social-media-login-retna1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "social-media-login-retna1.png"; sourceTree = "<group>"; };
+		A439308617B2BDC300100010 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A439308817B2BDCA00100010 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		A439308A17B2BDD000100010 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		A446C51617ABFD1800E6553F /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		A446C51817AD513300E6553F /* hunting-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hunting-background@2x.png"; sourceTree = "<group>"; };
 		E5458B6314D77BEA003BE4FF /* HESettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HESettingsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -201,6 +203,7 @@
 		E526A82D14F331D40074109C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				A439308417B136E300100010 /* social-media-login-retna1.png */,
 				A40EDB8D17B00C38005CB9E5 /* background_pattern.png */,
 				A40EDB8E17B00C38005CB9E5 /* background_pattern@2x.png */,
 				A40EDB8F17B00C38005CB9E5 /* chat.png */,
@@ -232,9 +235,6 @@
 				74D132001582A8E90065F1D2 /* just_background@2x.png */,
 				74D132011582A8E90065F1D2 /* Map.png */,
 				74D132021582A8E90065F1D2 /* Map@2x.png */,
-				2F3BD81314F2117100BDC051 /* Default.png */,
-				2F3BD81114F20F9E00BDC051 /* Default@2x.png */,
-				6D97114B16F7C36600B50B57 /* Default-568h@2x.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -242,6 +242,9 @@
 		E56E83E714D72E1100E856AB = {
 			isa = PBXGroup;
 			children = (
+				A439308A17B2BDD000100010 /* Default.png */,
+				A439308817B2BDCA00100010 /* Default@2x.png */,
+				A439308617B2BDC300100010 /* Default-568h@2x.png */,
 				E56E83FC14D72E1100E856AB /* HuntersEdge */,
 				E56E83F514D72E1100E856AB /* Frameworks */,
 				E56E83F314D72E1100E856AB /* Products */,
@@ -288,7 +291,6 @@
 				E526A82D14F331D40074109C /* Assets */,
 				E56E83FD14D72E1100E856AB /* Supporting Files */,
 			);
-			name = HuntersEdge;
 			path = HuntersEdge;
 			sourceTree = "<group>";
 		};
@@ -441,8 +443,6 @@
 				E5458B6D14D8B2E3003BE4FF /* HEWallPostCreateViewController.xib in Resources */,
 				E5C3305114DA024F00089B64 /* HELoginViewController.xib in Resources */,
 				E5E3D1F314DA20220074DA18 /* HENewUserViewController.xib in Resources */,
-				2F3BD81214F20F9E00BDC051 /* Default@2x.png in Resources */,
-				2F3BD81414F2117100BDC051 /* Default.png in Resources */,
 				74D131E61582A7420065F1D2 /* HuntersEdge-Info.plist in Resources */,
 				74D132051582A8E90065F1D2 /* bar.png in Resources */,
 				74D132061582A8E90065F1D2 /* bar@2x.png in Resources */,
@@ -464,7 +464,6 @@
 				74D132161582A8E90065F1D2 /* just_background@2x.png in Resources */,
 				74D132171582A8E90065F1D2 /* Map.png in Resources */,
 				74D132181582A8E90065F1D2 /* Map@2x.png in Resources */,
-				6D97114C16F7C36600B50B57 /* Default-568h@2x.png in Resources */,
 				A446C51717ABFD1800E6553F /* MainViewController.xib in Resources */,
 				A446C51917AD513300E6553F /* hunting-background@2x.png in Resources */,
 				A40EDB8017AFC488005CB9E5 /* TODO in Resources */,
@@ -479,6 +478,10 @@
 				A40EDB9E17B00C38005CB9E5 /* second@2x.png in Resources */,
 				A40EDB9F17B00C38005CB9E5 /* textfield_background.png in Resources */,
 				A40EDBA017B00C38005CB9E5 /* textfield_background@2x.png in Resources */,
+				A439308517B136E300100010 /* social-media-login-retna1.png in Resources */,
+				A439308717B2BDC300100010 /* Default-568h@2x.png in Resources */,
+				A439308917B2BDCA00100010 /* Default@2x.png in Resources */,
+				A439308B17B2BDD000100010 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,7 +610,7 @@
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_LABEL = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/HuntersEdge/HuntersEdge-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -633,7 +636,7 @@
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_LABEL = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/HuntersEdge/HuntersEdge-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -685,7 +688,7 @@
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_LABEL = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/HuntersEdge/HuntersEdge-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -738,7 +741,7 @@
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_LABEL = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/HuntersEdge/HuntersEdge-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

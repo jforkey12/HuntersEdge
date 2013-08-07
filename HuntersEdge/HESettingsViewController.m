@@ -7,6 +7,7 @@
 //
 
 #import "HESettingsViewController.h"
+#import "HEWallViewController.h"
 
 #import "HEAppDelegate.h"
 #import <Parse/Parse.h>
@@ -21,7 +22,6 @@
 @end
 
 // UITableView enum-based configuration via Fraser Speirs: http://speirs.org/blog/2008/10/11/a-technique-for-using-uitableview-and-retaining-your-sanity.html
-
 typedef enum {
 	kHESettingsTableViewDistance = 0,
 	kHESettingsTableViewLogout,
@@ -38,8 +38,6 @@ typedef enum {
 	kHESettingsTableViewDistanceSection250FeetRow = 0,
 	kHESettingsTableViewDistanceSection1000FeetRow,
 	kHESettingsTableViewDistanceSection1MileRow,
-	kHESettingsTableViewDistanceSection10MileRow,
-	kHESettingsTableViewDistanceSection100MileRow,
 	kHESettingsTableViewDistanceNumberOfRows
 } kHESettingsTableViewDistanceSectionRows;
 
@@ -91,12 +89,6 @@ static uint16_t const kHESettingsTableViewLogoutNumberOfRows = 1;
 		case kHESettingsTableViewDistanceSection1MileRow:
 			cellText = @"1 Mile";
 			break;
-		case kHESettingsTableViewDistanceSection10MileRow:
-			cellText = @"10 Miles";
-			break;
-		case kHESettingsTableViewDistanceSection100MileRow:
-			cellText = @"100 Miles";
-			break;
 		case kHESettingsTableViewDistanceNumberOfRows: // never reached.
 		default:
 			cellText = @"The universe";
@@ -117,26 +109,35 @@ static uint16_t const kHESettingsTableViewLogoutNumberOfRows = 1;
 		case kHESettingsTableViewDistanceSection1MileRow:
 			distance = 5280;
 			break;
-		case kHESettingsTableViewDistanceSection10MileRow:
-			distance = 52800;
-			break;
-		case kHESettingsTableViewDistanceSection100MileRow:
-			distance = 528000;
-			break;
 		case kHESettingsTableViewDistanceNumberOfRows: // never reached.
 		default:
 			distance = 10000 * kHEFeetToMiles;
 			break;
 	}
-
+	
 	return distance;
 }
 
-#pragma mark - UINavigationBar-based actions
+/*#pragma mark - UINavigationBar-based actions
 
 - (IBAction)done:(id)sender {
-	[self.presentingViewController dismissModalViewControllerAnimated:YES];
-}
+	UIView *tempTabBar;
+	
+	for (UIView *subview in self.view.subviews) {
+		if (subview.tag != 0)
+			[subview removeFromSuperview];
+		else
+			tempTabBar = subview;
+	}
+	UIViewController *temp;
+	
+	temp = [[HEWallViewController alloc] initWithNibName:@"HEWallViewController" bundle:nil];
+	
+	[temp.navigationController.view setHidden:YES];
+	
+	[self.view insertSubview:temp.view belowSubview:tempTabBar];
+	
+} */
 
 #pragma mark - UITableViewDataSource methods
 
@@ -166,14 +167,14 @@ static uint16_t const kHESettingsTableViewLogoutNumberOfRows = 1;
 		{
 			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
 		}
-
+		
 		// Configure the cell.
 		cell.textLabel.text = [self distanceLabelForCell:indexPath];
-
+		
 		if (self.filterDistance == 0.0) {
 			NSLog(@"We have a zero filter distance!");
 		}
-
+		
 		HELocationAccuracy filterDistanceInFeet = self.filterDistance * ( 1 / kHEFeetToMeters);
 		HELocationAccuracy distanceForCell = [self distanceForCell:indexPath];
 		if (abs(distanceForCell - filterDistanceInFeet) < 0.001 ) {
@@ -181,7 +182,7 @@ static uint16_t const kHESettingsTableViewLogoutNumberOfRows = 1;
 		} else {
 			cell.accessoryType = UITableViewCellAccessoryNone;
 		}
-
+		
 		return cell;
 	} else if (indexPath.section == kHESettingsTableViewLogout) {
 		UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:identifier];
@@ -189,11 +190,11 @@ static uint16_t const kHESettingsTableViewLogoutNumberOfRows = 1;
 		{
 			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
 		}
-
+		
 		// Configure the cell.
-		cell.textLabel.text = @"Log out of Hunter's Edge";
+		cell.textLabel.text = @"Log out of Anywall";
 		cell.textLabel.textAlignment = UITextAlignmentCenter;
-
+		
 		return cell;
 	}
 	else {
@@ -221,13 +222,13 @@ static uint16_t const kHESettingsTableViewLogoutNumberOfRows = 1;
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == kHESettingsTableViewDistance) {
 		[aTableView deselectRowAtIndexPath:indexPath animated:YES];
-
+		
 		// if we were already selected, bail and save some work.
 		UITableViewCell *selectedCell = [aTableView cellForRowAtIndexPath:indexPath];
 		if (selectedCell.accessoryType == UITableViewCellAccessoryCheckmark) {
 			return;
 		}
-
+		
 		// uncheck all visible cells.
 		for (UITableViewCell *cell in [aTableView visibleCells]) {
 			if (cell.accessoryType != UITableViewCellAccessoryNone) {
@@ -235,12 +236,12 @@ static uint16_t const kHESettingsTableViewLogoutNumberOfRows = 1;
 			}
 		}
 		selectedCell.accessoryType = UITableViewCellAccessoryCheckmark;
-
+		
 		HELocationAccuracy distanceForCellInFeet = [self distanceForCell:indexPath];
 		self.filterDistance = distanceForCellInFeet * kHEFeetToMeters;
 	} else if (indexPath.section == kHESettingsTableViewLogout) {
 		[aTableView deselectRowAtIndexPath:indexPath animated:YES];
-		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Log out of Hunter's Edge?" message:nil delegate:self cancelButtonTitle:@"Log out" otherButtonTitles:@"Cancel", nil];
+		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Log out of Anywall?" message:nil delegate:self cancelButtonTitle:@"Log out" otherButtonTitles:@"Cancel", nil];
 		[alertView show];
 	}
 }
@@ -252,9 +253,9 @@ static uint16_t const kHESettingsTableViewLogoutNumberOfRows = 1;
 	if (buttonIndex == kHESettingsLogoutDialogLogout) {
 		// Log out.
 		[PFUser logOut];
-
+		
 		[self.presentingViewController dismissModalViewControllerAnimated:YES];
-
+		
 		HEAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 		[appDelegate presentWelcomeViewController];
 	} else if (buttonIndex == kHESettingsLogoutDialogCancel) {

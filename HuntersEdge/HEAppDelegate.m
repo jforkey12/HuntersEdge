@@ -28,6 +28,7 @@ static NSString * const defaultsLocationKey = @"currentLocation";
 @synthesize filterDistance;
 @synthesize currentLocation;
 @synthesize tabBarController;
+@synthesize pinDropLocation;
 
 #pragma mark - UIApplicationDelegate
 
@@ -66,7 +67,7 @@ static NSString * const defaultsLocationKey = @"currentLocation";
 		// Skip straight to the main view.
 		HEWallViewController *wallViewController = [[HEWallViewController alloc] initWithNibName:nil bundle:nil];
 		navController = [[UINavigationController alloc] initWithRootViewController:wallViewController];
-		navController.navigationBarHidden = NO;
+		navController.navigationBarHidden = YES;
 		self.viewController = navController;
 		self.window.rootViewController = self.viewController;
 	} else {
@@ -95,6 +96,11 @@ static NSString * const defaultsLocationKey = @"currentLocation";
 	dispatch_async(dispatch_get_main_queue(), ^{
 		[[NSNotificationCenter defaultCenter] postNotificationName:kHEFilterDistanceChangeNotification object:nil userInfo:userInfo];
 	});
+}
+
+- (void)setPinDropLocation:(CLLocation *)aPinLocation {
+	pinDropLocation = aPinLocation;
+	
 }
 
 - (void)setCurrentLocation:(CLLocation *)aCurrentLocation {

@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import "HEPost.h"
 #import "HESettingsViewController.h"
+#import "HEChatRoomViewController.h"
 
 @interface HEWallViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UITabBarDelegate>
 
@@ -21,11 +22,11 @@
 @property (nonatomic, strong) IBOutlet UITabBarItem *groupChatItem;
 @property (nonatomic, strong) IBOutlet UITabBarItem *settingsItem;
 
-@property (nonatomic, retain) UIViewController *thirdTab;
-@property (nonatomic, retain) UIViewController *secondTab;
+@property (nonatomic, retain) HEChatRoomViewController *thirdTab;
+@property (nonatomic, retain) HEWallViewController *secondTab;
 @property (nonatomic, retain) UIViewController *firstTab;
 @property (nonatomic, retain) HESettingsViewController *fourthTab;
-@property (nonatomic, assign) UIViewController *currentTab;
+@property (nonatomic, retain) UIViewController *currentTab;
 @property (nonatomic, retain) UILongPressGestureRecognizer *lpgr;
 
 @end

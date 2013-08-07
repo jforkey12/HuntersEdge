@@ -113,7 +113,7 @@
 	
 	UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
 										  initWithTarget:self action:@selector(handleLongPress:)];
-	lpgr.minimumPressDuration = 2.0; //user needs to press for 2 seconds
+	lpgr.minimumPressDuration = 1.0; //user needs to press for 1 second
 	[self.mapView addGestureRecognizer:lpgr];
 
 }
@@ -216,33 +216,47 @@
 	NSLog(@"didSelectItem: %d", item.tag);
 	int selectedTag = tabBar.selectedItem.tag;
 	NSLog(@"%d", selectedTag);
-	
+	tabBar.tag = 0;
 	if (selectedTag == 0) {
 		[self.view removeFromSuperview];
 		
-		
 	}
 	if (selectedTag == 1) {
-		for (UIView *view in [self.view subviews]){
-			[view removeFromSuperview];
+		if(secondTab == nil)
+			self.secondTab = [[HEWallViewController alloc] initWithNibName:@"HEWallViewController" bundle:nil];
+		[self.view insertSubview:secondTab.view belowSubview:tabBar];
+		if(currentTab != nil)
+		{
+			[currentTab.view removeFromSuperview];
 		}
-		HEWallViewController *wallVC = [[HEWallViewController alloc] initWithNibName:nil bundle:nil];
-		[self.view insertSubview:wallVC.view belowSubview:tabBar];
-		}
-	if (selectedTag == 2){
-		for (UIView *view in [self.view subviews]){
-			[view removeFromSuperview];
-		}
-		HEChatRoomViewController *chatRoomVC = [[HEChatRoomViewController alloc] initWithNibName:nil bundle:nil];
-		[self.view insertSubview:chatRoomVC.view belowSubview:tabBar];
+		currentTab = secondTab;
 	}
-	if (selectedTag == 3) {
-		for (UIView *view in [self.view subviews]){
-			[view removeFromSuperview];
+	
+	if (selectedTag == 2){
+		if(thirdTab == nil)
+			self.thirdTab = [[HEChatRoomViewController alloc] initWithNibName:@"HEChatRoomViewController" bundle:nil];
+		[self.view insertSubview:thirdTab.view belowSubview:tabBar];
+		if(currentTab != nil)
+		{
+			[currentTab.view removeFromSuperview];
 		}
+		currentTab = thirdTab;
+	}
 
-		HESettingsViewController *settings = [[HESettingsViewController alloc] initWithNibName:nil bundle:nil];
-		[self.view insertSubview:settings.view belowSubview:tabBar];
+	if (selectedTag == 3) {
+		for (UIView *subview in self.view.subviews) {
+			if (subview != tabBar) 
+				[subview removeFromSuperview];
+		}
+		if(fourthTab == nil)
+			self.fourthTab = [[HESettingsViewController alloc] initWithNibName:@"HESettingsViewController" bundle:nil];
+		[self.view insertSubview:fourthTab.view belowSubview:tabBar];
+		if(currentTab != nil)
+		{
+			[currentTab.view removeFromSuperview];
+		}
+		currentTab = fourthTab;
+		[self.view insertSubview:currentTab.view belowSubview:tabBar];
 		
 	}
 }
@@ -261,7 +275,21 @@
 	MKPointAnnotation *annot = [[MKPointAnnotation alloc] init];
 	
     annot.coordinate = touchMapCoordinate;
-    [self.mapView addAnnotation:annot];
+    
+	//Moved actual pin add to post method
+	//[self.mapView addAnnotation:annot];
+	
+	HEAppDelegate *appDelegate = (HEAppDelegate *)[[UIApplication sharedApplication] delegate];
+	
+	CLLocation *tempLocation = [[CLLocation alloc] initWithLatitude:annot.coordinate.latitude longitude:annot.coordinate.longitude];
+
+	NSLog(@"%f, %f", tempLocation.coordinate.latitude, tempLocation.coordinate.longitude);
+	
+	appDelegate.pinDropLocation = tempLocation;
+	
+	HEWallPostCreateViewController *createPostViewController = [[HEWallPostCreateViewController alloc] initWithNibName:nil bundle:nil];
+	[self.navigationController presentViewController:createPostViewController animated:YES completion:nil];
+
 }
 
 #pragma mark - CLLocationManagerDelegate methods and helpers
