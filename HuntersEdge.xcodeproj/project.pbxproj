@@ -42,6 +42,13 @@
 		A446C51717ABFD1800E6553F /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A446C51617ABFD1800E6553F /* MainViewController.xib */; };
 		A446C51917AD513300E6553F /* hunting-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A446C51817AD513300E6553F /* hunting-background@2x.png */; };
 		A4773EA617B2EA32000E4CAC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4773EA517B2EA32000E4CAC /* Parse.framework */; };
+		A4773EAA17B5894A000E4CAC /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A4773EA917B5894A000E4CAC /* images.jpeg */; };
+		A4773EAE17B58B33000E4CAC /* crosshair.png in Resources */ = {isa = PBXBuildFile; fileRef = A4773EAD17B58B33000E4CAC /* crosshair.png */; };
+		A4773EB017B58B40000E4CAC /* crosshair.png in Resources */ = {isa = PBXBuildFile; fileRef = A4773EAF17B58B40000E4CAC /* crosshair.png */; };
+		A4773EB217B58BEB000E4CAC /* crosshair_small.png in Resources */ = {isa = PBXBuildFile; fileRef = A4773EB117B58BEA000E4CAC /* crosshair_small.png */; };
+		A4773EB417B58BF0000E4CAC /* crosshair_small.png in Resources */ = {isa = PBXBuildFile; fileRef = A4773EB317B58BEF000E4CAC /* crosshair_small.png */; };
+		A4773EB917B58C59000E4CAC /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4773EB617B58C58000E4CAC /* MasterViewController.m */; };
+		A4773EBA17B58C59000E4CAC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4773EB817B58C59000E4CAC /* DetailViewController.m */; };
 		C4FD6130172751E200F61563 /* HEWallPostsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E572726A14E0807F004A9423 /* HEWallPostsTableViewController.m */; };
 		E5458B6614D77BEA003BE4FF /* HESettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5458B6414D77BEA003BE4FF /* HESettingsViewController.m */; };
 		E5458B6714D77BEA003BE4FF /* HESettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5458B6514D77BEA003BE4FF /* HESettingsViewController.xib */; };
@@ -116,6 +123,15 @@
 		A446C51617ABFD1800E6553F /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		A446C51817AD513300E6553F /* hunting-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hunting-background@2x.png"; sourceTree = "<group>"; };
 		A4773EA517B2EA32000E4CAC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		A4773EA917B5894A000E4CAC /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpeg; sourceTree = "<group>"; };
+		A4773EAD17B58B33000E4CAC /* crosshair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crosshair.png; sourceTree = "<group>"; };
+		A4773EAF17B58B40000E4CAC /* crosshair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crosshair.png; sourceTree = "<group>"; };
+		A4773EB117B58BEA000E4CAC /* crosshair_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crosshair_small.png; sourceTree = "<group>"; };
+		A4773EB317B58BEF000E4CAC /* crosshair_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crosshair_small.png; sourceTree = "<group>"; };
+		A4773EB517B58C58000E4CAC /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		A4773EB617B58C58000E4CAC /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		A4773EB717B58C59000E4CAC /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		A4773EB817B58C59000E4CAC /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		E5458B6314D77BEA003BE4FF /* HESettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HESettingsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		E5458B6414D77BEA003BE4FF /* HESettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HESettingsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E5458B6514D77BEA003BE4FF /* HESettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HESettingsViewController.xib; sourceTree = "<group>"; };
@@ -199,6 +215,9 @@
 		E526A82D14F331D40074109C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				A4773EB117B58BEA000E4CAC /* crosshair_small.png */,
+				A4773EAD17B58B33000E4CAC /* crosshair.png */,
+				A4773EA917B5894A000E4CAC /* images.jpeg */,
 				A439308417B136E300100010 /* social-media-login-retna1.png */,
 				A40EDB8D17B00C38005CB9E5 /* background_pattern.png */,
 				A40EDB8E17B00C38005CB9E5 /* background_pattern@2x.png */,
@@ -230,6 +249,8 @@
 		E56E83E714D72E1100E856AB = {
 			isa = PBXGroup;
 			children = (
+				A4773EB317B58BEF000E4CAC /* crosshair_small.png */,
+				A4773EAF17B58B40000E4CAC /* crosshair.png */,
 				A439308A17B2BDD000100010 /* Default.png */,
 				A439308817B2BDCA00100010 /* Default@2x.png */,
 				A439308617B2BDC300100010 /* Default-568h@2x.png */,
@@ -353,6 +374,10 @@
 		E5F7574B14DB643A008CCAFE /* HuntersEdge View and Posts */ = {
 			isa = PBXGroup;
 			children = (
+				A4773EB517B58C58000E4CAC /* MasterViewController.h */,
+				A4773EB617B58C58000E4CAC /* MasterViewController.m */,
+				A4773EB717B58C59000E4CAC /* DetailViewController.h */,
+				A4773EB817B58C59000E4CAC /* DetailViewController.m */,
 				A439309617B2DE7900100010 /* HEChatRoomViewController.h */,
 				A439309717B2DE7900100010 /* HEChatRoomViewController.m */,
 				E5CAAFF114D733DC00D97A18 /* HEWallViewController.h */,
@@ -463,6 +488,11 @@
 				A439308717B2BDC300100010 /* Default-568h@2x.png in Resources */,
 				A439308917B2BDCA00100010 /* Default@2x.png in Resources */,
 				A439308B17B2BDD000100010 /* Default.png in Resources */,
+				A4773EAA17B5894A000E4CAC /* images.jpeg in Resources */,
+				A4773EAE17B58B33000E4CAC /* crosshair.png in Resources */,
+				A4773EB017B58B40000E4CAC /* crosshair.png in Resources */,
+				A4773EB217B58BEB000E4CAC /* crosshair_small.png in Resources */,
+				A4773EB417B58BF0000E4CAC /* crosshair_small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +519,8 @@
 				A40EDB8617B00B42005CB9E5 /* chatCell.m in Sources */,
 				A439309517B2DE5B00100010 /* Reachability.m in Sources */,
 				A439309817B2DE7900100010 /* HEChatRoomViewController.m in Sources */,
+				A4773EB917B58C59000E4CAC /* MasterViewController.m in Sources */,
+				A4773EBA17B58C59000E4CAC /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

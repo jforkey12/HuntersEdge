@@ -107,7 +107,7 @@ static uint16_t const kHESettingsTableViewLogoutNumberOfRows = 1;
 			distance = 1000;
 			break;
 		case kHESettingsTableViewDistanceSection1MileRow:
-			distance = 528000;
+			distance = 5280;
 			break;
 		case kHESettingsTableViewDistanceNumberOfRows: // never reached.
 		default:
@@ -192,7 +192,7 @@ static uint16_t const kHESettingsTableViewLogoutNumberOfRows = 1;
 		}
 		
 		// Configure the cell.
-		cell.textLabel.text = @"Log out of Anywall";
+		cell.textLabel.text = @"Log out of Hunter's Edge";
 		cell.textLabel.textAlignment = UITextAlignmentCenter;
 		
 		return cell;
