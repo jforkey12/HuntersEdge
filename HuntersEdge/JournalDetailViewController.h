@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  JournalEntryViewController.h
 //  Hunter's Edge
 //
 //  Created by James Forkey 2013.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "EntryView.h"
 
-@class ScaryBugDoc;
+@class HunterEdgeDoc;
 
-@interface DetailViewController : UIViewController <UITextFieldDelegate, EntryViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface JournalDetailViewController : UIViewController <UITextFieldDelegate, EntryViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-@property (strong, nonatomic) ScaryBugDoc * detailItem;
+@property (strong, nonatomic) HunterEdgeDoc * detailItem;
 @property (strong, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
 @property (weak, nonatomic) IBOutlet EntryView *entryView;

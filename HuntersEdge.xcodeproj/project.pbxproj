@@ -47,8 +47,15 @@
 		A4773EB017B58B40000E4CAC /* crosshair.png in Resources */ = {isa = PBXBuildFile; fileRef = A4773EAF17B58B40000E4CAC /* crosshair.png */; };
 		A4773EB217B58BEB000E4CAC /* crosshair_small.png in Resources */ = {isa = PBXBuildFile; fileRef = A4773EB117B58BEA000E4CAC /* crosshair_small.png */; };
 		A4773EB417B58BF0000E4CAC /* crosshair_small.png in Resources */ = {isa = PBXBuildFile; fileRef = A4773EB317B58BEF000E4CAC /* crosshair_small.png */; };
-		A4773EB917B58C59000E4CAC /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4773EB617B58C58000E4CAC /* MasterViewController.m */; };
-		A4773EBA17B58C59000E4CAC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4773EB817B58C59000E4CAC /* DetailViewController.m */; };
+		A4773EB917B58C59000E4CAC /* JournalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4773EB617B58C58000E4CAC /* JournalViewController.m */; };
+		A4773EBA17B58C59000E4CAC /* JournalDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4773EB817B58C59000E4CAC /* JournalDetailViewController.m */; };
+		A4773EBE17B5B7A8000E4CAC /* EntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4773EBD17B5B7A8000E4CAC /* EntryView.m */; };
+		A4773EC317B5B7BA000E4CAC /* HunterEdgeData.m in Sources */ = {isa = PBXBuildFile; fileRef = A4773EC017B5B7BA000E4CAC /* HunterEdgeData.m */; };
+		A4773EC417B5B7BA000E4CAC /* HunterEdgeDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = A4773EC217B5B7BA000E4CAC /* HunterEdgeDoc.m */; };
+		A4773EC617B5BA1F000E4CAC /* JournalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4773EC517B5BA1E000E4CAC /* JournalViewController.xib */; };
+		A4773EC917B5BCE4000E4CAC /* UIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = A4773EC817B5BCE4000E4CAC /* UIImageExtras.m */; };
+		A4773ECC17B5BD4A000E4CAC /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A4773ECB17B5BD4A000E4CAC /* SVProgressHUD.m */; };
+		A4773ECE17B5BE5D000E4CAC /* JournalDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4773ECD17B5BE5D000E4CAC /* JournalDetailViewController.xib */; };
 		C4FD6130172751E200F61563 /* HEWallPostsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E572726A14E0807F004A9423 /* HEWallPostsTableViewController.m */; };
 		E5458B6614D77BEA003BE4FF /* HESettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5458B6414D77BEA003BE4FF /* HESettingsViewController.m */; };
 		E5458B6714D77BEA003BE4FF /* HESettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5458B6514D77BEA003BE4FF /* HESettingsViewController.xib */; };
@@ -128,10 +135,22 @@
 		A4773EAF17B58B40000E4CAC /* crosshair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crosshair.png; sourceTree = "<group>"; };
 		A4773EB117B58BEA000E4CAC /* crosshair_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crosshair_small.png; sourceTree = "<group>"; };
 		A4773EB317B58BEF000E4CAC /* crosshair_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crosshair_small.png; sourceTree = "<group>"; };
-		A4773EB517B58C58000E4CAC /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		A4773EB617B58C58000E4CAC /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		A4773EB717B58C59000E4CAC /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		A4773EB817B58C59000E4CAC /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		A4773EB517B58C58000E4CAC /* JournalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JournalViewController.h; sourceTree = "<group>"; };
+		A4773EB617B58C58000E4CAC /* JournalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JournalViewController.m; sourceTree = "<group>"; };
+		A4773EB717B58C59000E4CAC /* JournalDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JournalDetailViewController.h; sourceTree = "<group>"; };
+		A4773EB817B58C59000E4CAC /* JournalDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JournalDetailViewController.m; sourceTree = "<group>"; };
+		A4773EBC17B5B7A8000E4CAC /* EntryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryView.h; sourceTree = "<group>"; };
+		A4773EBD17B5B7A8000E4CAC /* EntryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryView.m; sourceTree = "<group>"; };
+		A4773EBF17B5B7BA000E4CAC /* HunterEdgeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HunterEdgeData.h; sourceTree = "<group>"; };
+		A4773EC017B5B7BA000E4CAC /* HunterEdgeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HunterEdgeData.m; sourceTree = "<group>"; };
+		A4773EC117B5B7BA000E4CAC /* HunterEdgeDoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HunterEdgeDoc.h; sourceTree = "<group>"; };
+		A4773EC217B5B7BA000E4CAC /* HunterEdgeDoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HunterEdgeDoc.m; sourceTree = "<group>"; };
+		A4773EC517B5BA1E000E4CAC /* JournalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JournalViewController.xib; sourceTree = "<group>"; };
+		A4773EC717B5BCE4000E4CAC /* UIImageExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageExtras.h; sourceTree = "<group>"; };
+		A4773EC817B5BCE4000E4CAC /* UIImageExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageExtras.m; sourceTree = "<group>"; };
+		A4773ECA17B5BD4A000E4CAC /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		A4773ECB17B5BD4A000E4CAC /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		A4773ECD17B5BE5D000E4CAC /* JournalDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JournalDetailViewController.xib; sourceTree = "<group>"; };
 		E5458B6314D77BEA003BE4FF /* HESettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HESettingsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		E5458B6414D77BEA003BE4FF /* HESettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HESettingsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E5458B6514D77BEA003BE4FF /* HESettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HESettingsViewController.xib; sourceTree = "<group>"; };
@@ -206,10 +225,27 @@
 		A439308C17B2D7C000100010 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A4773ECA17B5BD4A000E4CAC /* SVProgressHUD.h */,
+				A4773ECB17B5BD4A000E4CAC /* SVProgressHUD.m */,
+				A4773EC717B5BCE4000E4CAC /* UIImageExtras.h */,
+				A4773EC817B5BCE4000E4CAC /* UIImageExtras.m */,
 				A439309317B2DE5B00100010 /* Reachability.h */,
 				A439309417B2DE5B00100010 /* Reachability.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		A4773EBB17B5B545000E4CAC /* Journal Views and Entries */ = {
+			isa = PBXGroup;
+			children = (
+				A4773EB717B58C59000E4CAC /* JournalDetailViewController.h */,
+				A4773EB817B58C59000E4CAC /* JournalDetailViewController.m */,
+				A4773EBC17B5B7A8000E4CAC /* EntryView.h */,
+				A4773EBD17B5B7A8000E4CAC /* EntryView.m */,
+				A4773EB517B58C58000E4CAC /* JournalViewController.h */,
+				A4773EB617B58C58000E4CAC /* JournalViewController.m */,
+			);
+			name = "Journal Views and Entries";
 			sourceTree = "<group>";
 		};
 		E526A82D14F331D40074109C /* Assets */ = {
@@ -312,6 +348,8 @@
 				A40EDB8B17B00BDC005CB9E5 /* HEChatRoomViewController.xib */,
 				E5C3304F14DA024F00089B64 /* HELoginViewController.xib */,
 				E5CAAFF314D733DC00D97A18 /* HEWallViewController.xib */,
+				A4773EC517B5BA1E000E4CAC /* JournalViewController.xib */,
+				A4773ECD17B5BE5D000E4CAC /* JournalDetailViewController.xib */,
 				E5458B6B14D8B2E3003BE4FF /* HEWallPostCreateViewController.xib */,
 				E5458B6514D77BEA003BE4FF /* HESettingsViewController.xib */,
 				74D131E51582A7420065F1D2 /* HuntersEdge-Info.plist */,
@@ -327,6 +365,10 @@
 		E5743F2A14E3024B004BBD5C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A4773EBF17B5B7BA000E4CAC /* HunterEdgeData.h */,
+				A4773EC017B5B7BA000E4CAC /* HunterEdgeData.m */,
+				A4773EC117B5B7BA000E4CAC /* HunterEdgeDoc.h */,
+				A4773EC217B5B7BA000E4CAC /* HunterEdgeDoc.m */,
 				A40EDB8417B00B42005CB9E5 /* chatCell.h */,
 				A40EDB8517B00B42005CB9E5 /* chatCell.m */,
 				E5743F2714E30154004BBD5C /* HESearchRadius.h */,
@@ -374,10 +416,7 @@
 		E5F7574B14DB643A008CCAFE /* HuntersEdge View and Posts */ = {
 			isa = PBXGroup;
 			children = (
-				A4773EB517B58C58000E4CAC /* MasterViewController.h */,
-				A4773EB617B58C58000E4CAC /* MasterViewController.m */,
-				A4773EB717B58C59000E4CAC /* DetailViewController.h */,
-				A4773EB817B58C59000E4CAC /* DetailViewController.m */,
+				A4773EBB17B5B545000E4CAC /* Journal Views and Entries */,
 				A439309617B2DE7900100010 /* HEChatRoomViewController.h */,
 				A439309717B2DE7900100010 /* HEChatRoomViewController.m */,
 				E5CAAFF114D733DC00D97A18 /* HEWallViewController.h */,
@@ -493,6 +532,8 @@
 				A4773EB017B58B40000E4CAC /* crosshair.png in Resources */,
 				A4773EB217B58BEB000E4CAC /* crosshair_small.png in Resources */,
 				A4773EB417B58BF0000E4CAC /* crosshair_small.png in Resources */,
+				A4773EC617B5BA1F000E4CAC /* JournalViewController.xib in Resources */,
+				A4773ECE17B5BE5D000E4CAC /* JournalDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,8 +560,13 @@
 				A40EDB8617B00B42005CB9E5 /* chatCell.m in Sources */,
 				A439309517B2DE5B00100010 /* Reachability.m in Sources */,
 				A439309817B2DE7900100010 /* HEChatRoomViewController.m in Sources */,
-				A4773EB917B58C59000E4CAC /* MasterViewController.m in Sources */,
-				A4773EBA17B58C59000E4CAC /* DetailViewController.m in Sources */,
+				A4773EB917B58C59000E4CAC /* JournalViewController.m in Sources */,
+				A4773EBA17B58C59000E4CAC /* JournalDetailViewController.m in Sources */,
+				A4773EBE17B5B7A8000E4CAC /* EntryView.m in Sources */,
+				A4773EC317B5B7BA000E4CAC /* HunterEdgeData.m in Sources */,
+				A4773EC417B5B7BA000E4CAC /* HunterEdgeDoc.m in Sources */,
+				A4773EC917B5BCE4000E4CAC /* UIImageExtras.m in Sources */,
+				A4773ECC17B5BD4A000E4CAC /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,17 +1,17 @@
 //
-//  MasterViewController.m
-//  ScaryBugs
+//  JournalViewController.m
+//  Hunter's Edge
 //
-//  Created by Ray Wenderlich on 2/16/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by James Forkey on 8/9/13.
+//  Copyright (c) 2013. All rights reserved.
 //
 
-#import "MasterViewController.h"
-#import "ScaryBugDoc.h"
-#import "ScaryBugData.h"
-#import "DetailViewController.h"
+#import "JournalViewController.h"
+#import "HunterEdgeDoc.h"
+#import "HunterEdgeData.h"
+#import "JournalDetailViewController.h"
 
-@implementation MasterViewController
+@implementation JournalViewController
 @synthesize bugs = _bugs;
 
 - (void)awakeFromNib
@@ -40,7 +40,7 @@
 }
 
 - (void)addTapped:(id)sender {
-    ScaryBugDoc *newDoc = [[ScaryBugDoc alloc] initWithTitle:@"New Entry" rating:0 thumbImage:nil fullImage:nil];
+    HunterEdgeDoc *newDoc = [[HunterEdgeDoc alloc] initWithTitle:@"New Entry" rating:0 thumbImage:nil fullImage:nil];
     [_bugs addObject:newDoc];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_bugs.count-1 inSection:0];
@@ -134,17 +134,17 @@
 {
     UITableViewCell *cell = [tableView
                              dequeueReusableCellWithIdentifier:@"MyBasicCell"];
-    ScaryBugDoc *bug = [self.bugs objectAtIndex:indexPath.row];
+    HunterEdgeDoc *bug = [self.bugs objectAtIndex:indexPath.row];
     cell.textLabel.text = bug.data.title;
     cell.imageView.image = bug.thumbImage;
     return cell;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+/*- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    DetailViewController *detailController =segue.destinationViewController;
-    ScaryBugDoc *bug = [self.bugs objectAtIndex:self.tableView.indexPathForSelectedRow.row];
-    detailController.detailItem = bug;
-}
+    JournalDetailViewController *JournalEntryController =segue.destinationViewController;
+    HunterEdgeDoc *bug = [self.bugs objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    JournalDetailViewController.detailItem = bug;
+}*/
 
 @end

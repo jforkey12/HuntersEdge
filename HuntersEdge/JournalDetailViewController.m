@@ -1,22 +1,22 @@
 //
-//  DetailViewController.m
+//  JournalEntryViewController.m
 //  Hunter's Edge
 //
 //  Created by James Forkey 2013.
 //  Copyright (c) 2013. All rights reserved.
 //
 
-#import "DetailViewController.h"
-#import "ScaryBugDoc.h"
-#import "ScaryBugData.h"
+#import "JournalDetailViewController.h"
+#import "HunterEdgeDoc.h"
+#import "HunterEdgeData.h"
 #import "UIImageExtras.h"
 #import "SVProgressHUD.h"
 
-@interface DetailViewController ()
+@interface JournalDetailViewController ()
 - (void)configureView;
 @end
 
-@implementation DetailViewController
+@implementation JournalDetailViewController
 
 @synthesize detailItem = _detailItem;
 @synthesize detailDescriptionLabel = _detailDescriptionLabel;

@@ -217,7 +217,7 @@ BOOL isFirstShown = YES;
             } else {
 				NSLog(@"C");
 
-                // Log details of the failure
+                // Log JournalEntrys of the failure
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
         }]; */
@@ -256,7 +256,7 @@ BOOL isFirstShown = YES;
                         [chatTable reloadData];
                         [chatTable scrollsToTop];
                     } else {
-                        // Log details of the failure
+                        // Log JournalEntrys of the failure
                         NSLog(@"Error: %@ %@", error, [error userInfo]);
                     }
                 }];
