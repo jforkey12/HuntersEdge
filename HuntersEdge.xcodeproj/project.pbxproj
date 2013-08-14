@@ -56,6 +56,8 @@
 		A4773EC917B5BCE4000E4CAC /* UIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = A4773EC817B5BCE4000E4CAC /* UIImageExtras.m */; };
 		A4773ECC17B5BD4A000E4CAC /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A4773ECB17B5BD4A000E4CAC /* SVProgressHUD.m */; };
 		A4773ECE17B5BE5D000E4CAC /* JournalDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4773ECD17B5BE5D000E4CAC /* JournalDetailViewController.xib */; };
+		A4D53CF617BBB8D900725921 /* JournalTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4D53CF517BBB8D900725921 /* JournalTableCell.xib */; };
+		A4D53CF817BBCC3900725921 /* doe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A4D53CF717BBCC3900725921 /* doe.jpg */; };
 		C4FD6130172751E200F61563 /* HEWallPostsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E572726A14E0807F004A9423 /* HEWallPostsTableViewController.m */; };
 		E5458B6614D77BEA003BE4FF /* HESettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5458B6414D77BEA003BE4FF /* HESettingsViewController.m */; };
 		E5458B6714D77BEA003BE4FF /* HESettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5458B6514D77BEA003BE4FF /* HESettingsViewController.xib */; };
@@ -151,6 +153,8 @@
 		A4773ECA17B5BD4A000E4CAC /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		A4773ECB17B5BD4A000E4CAC /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		A4773ECD17B5BE5D000E4CAC /* JournalDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JournalDetailViewController.xib; sourceTree = "<group>"; };
+		A4D53CF517BBB8D900725921 /* JournalTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JournalTableCell.xib; sourceTree = "<group>"; };
+		A4D53CF717BBCC3900725921 /* doe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = doe.jpg; sourceTree = "<group>"; };
 		E5458B6314D77BEA003BE4FF /* HESettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HESettingsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		E5458B6414D77BEA003BE4FF /* HESettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HESettingsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E5458B6514D77BEA003BE4FF /* HESettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HESettingsViewController.xib; sourceTree = "<group>"; };
@@ -251,6 +255,7 @@
 		E526A82D14F331D40074109C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				A4D53CF717BBCC3900725921 /* doe.jpg */,
 				A4773EB117B58BEA000E4CAC /* crosshair_small.png */,
 				A4773EAD17B58B33000E4CAC /* crosshair.png */,
 				A4773EA917B5894A000E4CAC /* images.jpeg */,
@@ -349,6 +354,7 @@
 				E5C3304F14DA024F00089B64 /* HELoginViewController.xib */,
 				E5CAAFF314D733DC00D97A18 /* HEWallViewController.xib */,
 				A4773EC517B5BA1E000E4CAC /* JournalViewController.xib */,
+				A4D53CF517BBB8D900725921 /* JournalTableCell.xib */,
 				A4773ECD17B5BE5D000E4CAC /* JournalDetailViewController.xib */,
 				E5458B6B14D8B2E3003BE4FF /* HEWallPostCreateViewController.xib */,
 				E5458B6514D77BEA003BE4FF /* HESettingsViewController.xib */,
@@ -534,6 +540,8 @@
 				A4773EB417B58BF0000E4CAC /* crosshair_small.png in Resources */,
 				A4773EC617B5BA1F000E4CAC /* JournalViewController.xib in Resources */,
 				A4773ECE17B5BE5D000E4CAC /* JournalDetailViewController.xib in Resources */,
+				A4D53CF617BBB8D900725921 /* JournalTableCell.xib in Resources */,
+				A4D53CF817BBCC3900725921 /* doe.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

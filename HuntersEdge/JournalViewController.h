@@ -10,6 +10,6 @@
 
 @interface JournalViewController : UITableViewController
 
-@property (strong) NSMutableArray *bugs;
+@property (strong) NSMutableArray *animals;
 
 @end

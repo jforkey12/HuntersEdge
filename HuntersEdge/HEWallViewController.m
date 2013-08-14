@@ -8,6 +8,7 @@
 
 #import "HEWallViewController.h"
 
+#import "JournalViewController.h"
 #import "HEChatRoomViewController.h"
 #import "HESettingsViewController.h"
 #import "HEWallPostCreateViewController.h"
@@ -17,6 +18,7 @@
 #import "HECircleView.h"
 #import "HEPost.h"
 #import <CoreLocation/CoreLocation.h>
+#import "HunterEdgeDoc.h"
 
 // private methods and properties
 @interface HEWallViewController ()
@@ -217,9 +219,31 @@
 	int selectedTag = tabBar.selectedItem.tag;
 	NSLog(@"%d", selectedTag);
 	tabBar.tag = 0;
+	
 	if (selectedTag == 0) {
-		[self.view removeFromSuperview];
+		HunterEdgeDoc *animal1 = [[HunterEdgeDoc alloc] initWithTitle:@"200lb Doe" rating:4 thumbImage:[UIImage imageNamed:@"doe.jpg"] fullImage:[UIImage imageNamed:@"doe.jpg"]];
 		
+		NSMutableArray *animals = [NSMutableArray arrayWithObjects:animal1, nil];
+		
+		UINavigationController * navController = (UINavigationController *) self.navigationController;
+		
+		JournalViewController *masterController = [[JournalViewController alloc] initWithNibName:@"JournalViewController" bundle:nil];
+		
+		masterController.animals = animals;
+		
+		for (UIView *subview in self.view.subviews) {
+			if (subview != tabBar)
+				[subview removeFromSuperview];
+		}
+		if (firstTab == nil)
+			self.firstTab = masterController;
+			//self.firstTab = [[JournalViewController alloc] initWithNibName:@"JournalViewController" bundle:nil];
+		[self.view insertSubview:firstTab.view belowSubview:tabBar];
+		if(currentTab != nil)
+		{
+			[currentTab.view removeFromSuperview];
+		}
+		currentTab = firstTab;
 	}
 	if (selectedTag == 1) {
 		if(secondTab == nil)

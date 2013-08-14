@@ -12,7 +12,7 @@
 #import "JournalDetailViewController.h"
 
 @implementation JournalViewController
-@synthesize bugs = _bugs;
+@synthesize animals = _animals;
 
 - (void)awakeFromNib
 {
@@ -29,9 +29,10 @@
 
 - (void)viewDidLoad
 {
+	
     [super viewDidLoad];
 	self.title = @"Hunting Journal";
-    
+    self.navigationController.view.hidden = NO;
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] 
                                                initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
@@ -41,14 +42,14 @@
 
 - (void)addTapped:(id)sender {
     HunterEdgeDoc *newDoc = [[HunterEdgeDoc alloc] initWithTitle:@"New Entry" rating:0 thumbImage:nil fullImage:nil];
-    [_bugs addObject:newDoc];
+    [_animals addObject:newDoc];
     
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_bugs.count-1 inSection:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_animals.count-1 inSection:0];
     NSArray *indexPaths = [NSArray arrayWithObject:indexPath];    
     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:YES];
     
     [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
-    [self performSegueWithIdentifier:@"MySegue" sender:self];    
+		JournalDetailViewController *journalVC = [[JournalDetailViewController alloc] initWithNibName:@"JournalDetailViewController" bundle:nil];
 }
 
 - (void)viewDidUnload
@@ -97,7 +98,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {        
-        [_bugs removeObjectAtIndex:indexPath.row];
+        [_animals removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }  
 }
@@ -126,25 +127,39 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    return [self.bugs count];
+    return [self.animals count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
     UITableViewCell *cell = [tableView
                              dequeueReusableCellWithIdentifier:@"MyBasicCell"];
-    HunterEdgeDoc *bug = [self.bugs objectAtIndex:indexPath.row];
-    cell.textLabel.text = bug.data.title;
-    cell.imageView.image = bug.thumbImage;
+    HunterEdgeDoc *animal = [self.animals objectAtIndex:indexPath.row];
+	if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MyBasicCell"];
+    }
+    cell.textLabel.text = animal.data.title;
+    cell.imageView.image = animal.thumbImage;
     return cell;
 }
 
-/*- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    JournalDetailViewController *JournalEntryController =segue.destinationViewController;
-    HunterEdgeDoc *bug = [self.bugs objectAtIndex:self.tableView.indexPathForSelectedRow.row];
-    JournalDetailViewController.detailItem = bug;
-}*/
+#pragma mark - UITableViewDelegate methods
+
+// Called after the user changes the selection.
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	for (UIView *subview in self.view.subviews) {
+		if (subview.tag != 0)
+			[subview removeFromSuperview];
+	}
+	
+	JournalDetailViewController *detailController = [[JournalDetailViewController alloc] initWithNibName:@"JournalDetailViewController" bundle:nil];
+    HunterEdgeDoc *animal = [self.animals objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    detailController.detailItem = animal;
+	[self.view addSubview:detailController.view];
+}
+
 
 @end

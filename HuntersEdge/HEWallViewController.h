@@ -12,6 +12,7 @@
 #import "HEPost.h"
 #import "HESettingsViewController.h"
 #import "HEChatRoomViewController.h"
+#import "JournalViewController.h"
 
 @interface HEWallViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UITabBarDelegate>
 
@@ -24,7 +25,7 @@
 
 @property (nonatomic, retain) HEChatRoomViewController *thirdTab;
 @property (nonatomic, retain) HEWallViewController *secondTab;
-@property (nonatomic, retain) UIViewController *firstTab;
+@property (nonatomic, retain) JournalViewController *firstTab;
 @property (nonatomic, retain) HESettingsViewController *fourthTab;
 @property (nonatomic, retain) UIViewController *currentTab;
 @property (nonatomic, retain) UILongPressGestureRecognizer *lpgr;
