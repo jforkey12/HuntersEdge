@@ -56,6 +56,7 @@
 		A4773EC917B5BCE4000E4CAC /* UIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = A4773EC817B5BCE4000E4CAC /* UIImageExtras.m */; };
 		A4773ECC17B5BD4A000E4CAC /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A4773ECB17B5BD4A000E4CAC /* SVProgressHUD.m */; };
 		A4773ECE17B5BE5D000E4CAC /* JournalDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4773ECD17B5BE5D000E4CAC /* JournalDetailViewController.xib */; };
+		A49F716917DE7DF000D5A069 /* HeHunter.m in Sources */ = {isa = PBXBuildFile; fileRef = A49F716817DE7DF000D5A069 /* HeHunter.m */; };
 		A4D53CF617BBB8D900725921 /* JournalTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4D53CF517BBB8D900725921 /* JournalTableCell.xib */; };
 		A4D53CF817BBCC3900725921 /* doe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A4D53CF717BBCC3900725921 /* doe.jpg */; };
 		C4FD6130172751E200F61563 /* HEWallPostsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E572726A14E0807F004A9423 /* HEWallPostsTableViewController.m */; };
@@ -153,6 +154,8 @@
 		A4773ECA17B5BD4A000E4CAC /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		A4773ECB17B5BD4A000E4CAC /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		A4773ECD17B5BE5D000E4CAC /* JournalDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JournalDetailViewController.xib; sourceTree = "<group>"; };
+		A49F716717DE7DF000D5A069 /* HEHunter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEHunter.h; sourceTree = "<group>"; };
+		A49F716817DE7DF000D5A069 /* HeHunter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeHunter.m; sourceTree = "<group>"; };
 		A4D53CF517BBB8D900725921 /* JournalTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JournalTableCell.xib; sourceTree = "<group>"; };
 		A4D53CF717BBCC3900725921 /* doe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = doe.jpg; sourceTree = "<group>"; };
 		E5458B6314D77BEA003BE4FF /* HESettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HESettingsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -379,6 +382,8 @@
 				A40EDB8517B00B42005CB9E5 /* chatCell.m */,
 				E5743F2714E30154004BBD5C /* HESearchRadius.h */,
 				E5743F2814E30154004BBD5C /* HESearchRadius.m */,
+				A49F716717DE7DF000D5A069 /* HEHunter.h */,
+				A49F716817DE7DF000D5A069 /* HeHunter.m */,
 				E554D5C114E32EFB008D027A /* HEPost.h */,
 				E554D5C214E32EFB008D027A /* HEPost.m */,
 			);
@@ -575,6 +580,7 @@
 				A4773EC417B5B7BA000E4CAC /* HunterEdgeDoc.m in Sources */,
 				A4773EC917B5BCE4000E4CAC /* UIImageExtras.m in Sources */,
 				A4773ECC17B5BD4A000E4CAC /* SVProgressHUD.m in Sources */,
+				A49F716917DE7DF000D5A069 /* HeHunter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

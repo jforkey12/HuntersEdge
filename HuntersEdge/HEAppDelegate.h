@@ -15,7 +15,11 @@ static double const kHEMetersInAKilometer = 1000.0; // this is an exact value.
 
 static NSUInteger const kHEWallPostsSearch = 20; // query limit for pins and tableviewcells
 
+// !!! SHOULD WE CHANGE THIS?  OTHERWISE LOCAL HUNTERS MAY NOT BE SHOWN.... !!!
+static NSUInteger const kHEWallHuntersSearch = 25; // query limit for hunters to display
+
 // Parse API key constants:
+static NSString * const kHEParseHuntersClassKey = @"hunterLocations";
 static NSString * const kHEParsePostsClassKey = @"Posts";
 static NSString * const kHEParseUserKey = @"user";
 static NSString * const kHEParseUsernameKey = @"username";

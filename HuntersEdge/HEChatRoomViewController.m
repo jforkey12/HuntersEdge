@@ -113,7 +113,8 @@ BOOL isFirstShown = YES;
         
         // going for the parsing
         PFObject *newMessage = [PFObject objectWithClassName:@"chatroom"];
-        [newMessage setObject:tfEntry.text forKey:@"text"];
+		
+        [newMessage setObject:@"TEST" forKey:@"text"];
         [newMessage setObject:userName forKey:@"userName"];
         [newMessage setObject:[NSDate date] forKey:@"date"];
         [newMessage saveInBackground];
@@ -201,13 +202,15 @@ BOOL isFirstShown = YES;
 	NSLog(@"B");
     if ([chatData count] == 0) {
         query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-        [query orderByAscending:@"createdAt"];
         NSLog(@"Trying to retrieve from cache");
 		
+	
 		// !!!! THIS SHIT NEEDS TO BE FIXED.  CAUSES NSINCONSISTENCY ERROR
 		// CAN NOT HAVE TWO QUERIES SIMULTANEOUSLY ON THE SAME THREAD ??
 		
-       /* [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+		//*PFQuery *query2 = [PFQuery queryWithClassName:className];
+		
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
                 // The find succeeded.
                 NSLog(@"Successfully retrieved %d chats from cache.", objects.count);
@@ -215,12 +218,12 @@ BOOL isFirstShown = YES;
                 [chatData addObjectsFromArray:objects];
                 [chatTable reloadData];
             } else {
-				NSLog(@"C");
+				NSLog(@"Crap, there was an error.");
 
                 // Log JournalEntrys of the failure
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
-        }]; */
+        }]; 
     }
     __block int totalNumberOfEntries = 0;
     [query orderByAscending:@"createdAt"];
@@ -278,9 +281,14 @@ BOOL isFirstShown = YES;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
+
 	chatCell *cell = (chatCell *)[tableView dequeueReusableCellWithIdentifier: @"chatCellIdentifier"];
+	if (cell == nil)
+    {
+		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"chatCellIdentifier"];
+    }
 	NSUInteger row = [chatData count]-[indexPath row]-1;
-    
+//    NSLog(chatData);
     if (row < chatData.count){
         NSString *chatText = [[chatData objectAtIndex:row] objectForKey:@"text"];
         cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
@@ -298,7 +306,10 @@ BOOL isFirstShown = YES;
         cell.timeLabel.text = timeString;
         
         cell.userLabel.text = [[chatData objectAtIndex:row] objectForKey:@"userName"];
-    }    
+    }
+	if (cell == nil) {
+		cell = [[chatCell alloc] init]; //Somethings wrong, nil cell...
+	}
 	return cell;
 }
 
@@ -423,8 +434,8 @@ BOOL isFirstShown = YES;
     }
     else if (isFirstShown){
         UIAlertView *alert = [[UIAlertView alloc] 
-                              initWithTitle:@"Ooops" 
-                              message:@"Something's gone wrong. To post in this room you must have a chat name. Go to the options panel to define one" 
+                              initWithTitle:@"Error" 
+                              message:@"You don't have a username!" 
                               delegate:self 
                               cancelButtonTitle:nil
                               otherButtonTitles:@"Dismiss", nil];

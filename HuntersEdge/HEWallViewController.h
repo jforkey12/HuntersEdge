@@ -13,6 +13,7 @@
 #import "HESettingsViewController.h"
 #import "HEChatRoomViewController.h"
 #import "JournalViewController.h"
+#import "HEHunter.h"
 
 @interface HEWallViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UITabBarDelegate>
 

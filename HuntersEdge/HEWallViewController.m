@@ -34,6 +34,7 @@
 
 // posts:
 @property (nonatomic, strong) NSMutableArray *allPosts;
+@property (nonatomic, strong) NSMutableArray *allHunters;
 
 - (void)startStandardUpdates;
 
@@ -67,6 +68,7 @@
 @synthesize className;
 @synthesize wallPostsTableViewController;
 @synthesize allPosts;
+@synthesize allHunters;
 @synthesize mapPinsPlaced;
 @synthesize mapPannedSinceLocationUpdate;
 @synthesize tabBar;
@@ -476,7 +478,91 @@
 	self.mapPannedSinceLocationUpdate = YES;
 }
 
-#pragma mark - Fetch map pins
+#pragma mark - Fetch map elements
+
+- (void)queryForAllHuntersNearLocation:(CLLocation *)currentLocation withNearbyDistance:(CLLocationAccuracy)nearbyDistance {
+	PFQuery *query = [PFQuery queryWithClassName:kHEParseHuntersClassKey];
+	
+	if (currentLocation == nil) {
+		NSLog(@"%s got a nil location!", __PRETTY_FUNCTION__);
+	}
+	
+	// If no objects are loaded in memory, we look to the cache first to fill the table
+	// and then subsequently do a query against the network.
+	if ([self.allHunters count] == 0) {
+		query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+	}
+	
+	// Query for posts sort of kind of near our current location.
+	PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:currentLocation.coordinate.latitude longitude:currentLocation.coordinate.longitude];
+	[query whereKey:kHEParseLocationKey nearGeoPoint:point withinKilometers:kHEWallPostMaximumSearchDistance];
+	[query includeKey:kHEParseUserKey];
+	query.limit = kHEWallHuntersSearch;
+	
+	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+		if (error) {
+			NSLog(@"error in geo query!"); // todo why is this ever happening?
+		} else {
+			// We need to make new hunter objects from objects,
+			// and update allHunters and the map to reflect this new array.
+			// But we don't want to remove all annotations from the mapview blindly,
+			// so let's do some work to figure out what's new and what needs removing.
+			
+			// 1. Find genuinely new Hunters:
+			NSMutableArray *newHunters = [[NSMutableArray alloc] initWithCapacity:kHEWallHuntersSearch];
+			// (Cache the objects we make for the search in step 2:)
+			NSMutableArray *allNewHunters = [[NSMutableArray alloc] initWithCapacity:kHEWallHuntersSearch];
+			for (PFObject *object in objects) {
+				HEHunter *newHunter = [[HEHunter alloc] initWithPFObject:object];
+				[allNewHunters addObject:newHunter];
+				BOOL found = NO;
+				for (HEHunter *currentHunters in allHunters) {
+					if ([newHunter equalToHunter:currentHunters]) {
+						found = YES;
+					}
+				}
+				if (!found) {
+					[newHunters addObject:newHunter];
+				}
+			}
+			// newPosts now contains our new objects.
+			
+			// 2. Find hunters in allHunters that didn't make the cut.
+			NSMutableArray *huntersToRemove = [[NSMutableArray alloc] initWithCapacity:kHEWallHuntersSearch];
+			for (HEHunter *currentHunter in allHunters) {
+				BOOL found = NO;
+				// Use our object cache from the first loop to save some work.
+				for (HEHunter *allNewHunter in allNewHunters) {
+					if ([currentHunter equalToHunter:allNewHunter]) {
+						found = YES;
+					}
+				}
+				if (!found) {
+					[huntersToRemove addObject:currentHunter];
+				}
+			}
+			// huntersToRemove has objects that didn't come in with our new results.
+			
+			// 3. Configure our new hunters; these are about to go onto the map.
+			for (HEHunter *newHunter in newHunters) {
+				CLLocation *objectLocation = [[CLLocation alloc] initWithLatitude:newHunter.coordinate.latitude longitude:newHunter.coordinate.longitude];
+
+				CLLocationDistance distanceFromCurrent = [currentLocation distanceFromLocation:objectLocation];
+				[newHunter setTitleAndSubtitleOutsideDistance:( distanceFromCurrent > nearbyDistance ? YES : NO )];
+				//animate drop for now, will change later
+				newHunter.animatesDrop = mapPinsPlaced;
+			}
+			
+
+			[mapView removeAnnotations:huntersToRemove];
+			[mapView addAnnotations:newHunters];
+			[allHunters addObjectsFromArray:newHunters];
+			[allHunters removeObjectsInArray:huntersToRemove];
+			
+			self.mapPinsPlaced = YES;
+		}
+	}];
+}
 
 - (void)queryForAllPostsNearLocation:(CLLocation *)currentLocation withNearbyDistance:(CLLocationAccuracy)nearbyDistance {
 	PFQuery *query = [PFQuery queryWithClassName:self.className];
@@ -496,7 +582,7 @@
 	[query whereKey:kHEParseLocationKey nearGeoPoint:point withinKilometers:kHEWallPostMaximumSearchDistance];
 	[query includeKey:kHEParseUserKey];
 	query.limit = kHEWallPostsSearch;
-
+	
 	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 		if (error) {
 			NSLog(@"error in geo query!"); // todo why is this ever happening?
