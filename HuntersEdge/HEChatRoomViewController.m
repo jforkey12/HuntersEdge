@@ -114,7 +114,7 @@ BOOL isFirstShown = YES;
         // going for the parsing
         PFObject *newMessage = [PFObject objectWithClassName:@"chatroom"];
 		
-        [newMessage setObject:@"TEST" forKey:@"text"];
+        [newMessage setObject:tfEntry.text forKey:@"text"];
         [newMessage setObject:userName forKey:@"userName"];
         [newMessage setObject:[NSDate date] forKey:@"date"];
         [newMessage saveInBackground];
@@ -202,15 +202,14 @@ BOOL isFirstShown = YES;
 	NSLog(@"B");
     if ([chatData count] == 0) {
         query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+        [query orderByDescending:@"createdAt"];
         NSLog(@"Trying to retrieve from cache");
 		
 	
 		// !!!! THIS SHIT NEEDS TO BE FIXED.  CAUSES NSINCONSISTENCY ERROR
 		// CAN NOT HAVE TWO QUERIES SIMULTANEOUSLY ON THE SAME THREAD ??
-		
-		//*PFQuery *query2 = [PFQuery queryWithClassName:className];
-		
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//		/PFQuery *query2 = [PFQuery queryWithClassName:className];
+      /*  [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
                 // The find succeeded.
                 NSLog(@"Successfully retrieved %d chats from cache.", objects.count);
@@ -218,15 +217,15 @@ BOOL isFirstShown = YES;
                 [chatData addObjectsFromArray:objects];
                 [chatTable reloadData];
             } else {
-				NSLog(@"Crap, there was an error.");
+				NSLog(@"C");
 
                 // Log JournalEntrys of the failure
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
-        }]; 
+        }]; */
     }
     __block int totalNumberOfEntries = 0;
-    [query orderByAscending:@"createdAt"];
+    [query orderByDescending:@"createdAt"];
     [query countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
         if (!error) {
             // The count request succeeded. Log the count
@@ -262,7 +261,7 @@ BOOL isFirstShown = YES;
                         // Log JournalEntrys of the failure
                         NSLog(@"Error: %@ %@", error, [error userInfo]);
                     }
-                }];
+                }]; 
             }
             
         } else {
@@ -281,14 +280,21 @@ BOOL isFirstShown = YES;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
-
-	chatCell *cell = (chatCell *)[tableView dequeueReusableCellWithIdentifier: @"chatCellIdentifier"];
-	if (cell == nil)
-    {
-		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"chatCellIdentifier"];
+	static NSString *CellIdentifier = @"chatCellIdentifier";
+    chatCell *cell = (chatCell *) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil) {
+        NSArray* topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"chatCell" owner:self options:nil];
+        for (id currentObject in topLevelObjects) {
+            if ([currentObject isKindOfClass:[UITableViewCell class]]) {
+                cell = (chatCell *)currentObject;
+                break;
+            }
+        }
     }
-	NSUInteger row = [chatData count]-[indexPath row]-1;
-//    NSLog(chatData);
+
+		NSUInteger row = [chatData count]-[indexPath row]-1;
+    
     if (row < chatData.count){
         NSString *chatText = [[chatData objectAtIndex:row] objectForKey:@"text"];
         cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
@@ -306,10 +312,7 @@ BOOL isFirstShown = YES;
         cell.timeLabel.text = timeString;
         
         cell.userLabel.text = [[chatData objectAtIndex:row] objectForKey:@"userName"];
-    }
-	if (cell == nil) {
-		cell = [[chatCell alloc] init]; //Somethings wrong, nil cell...
-	}
+    }    
 	return cell;
 }
 
