@@ -36,7 +36,8 @@ BOOL isFirstShown = YES;
 		PF_EGORefreshTableHeaderView *view = [[PF_EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - chatTable.bounds.size.height, self.view.frame.size.width, chatTable.bounds.size.height)];
 		view.delegate = self;
 		[chatTable addSubview:view];
-		_refreshHeaderView = view;		
+		_refreshHeaderView = view;
+		[chatTable setContentOffset:CGPointMake(0, CGFLOAT_MAX)];
 	}
 	//  update the last update date
 	[_refreshHeaderView refreshLastUpdatedDate];
@@ -107,7 +108,7 @@ BOOL isFirstShown = YES;
         NSIndexPath *newPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [insertIndexPaths addObject:newPath];
         [chatTable beginUpdates];
-        [chatTable insertRowsAtIndexPaths:insertIndexPaths withRowAnimation:UITableViewRowAnimationTop];
+        [chatTable insertRowsAtIndexPaths:insertIndexPaths withRowAnimation:UITableViewRowAnimationBottom];
         [chatTable endUpdates];
         [chatTable reloadData];
         
@@ -202,8 +203,8 @@ BOOL isFirstShown = YES;
 	NSLog(@"B");
     if ([chatData count] == 0) {
         query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-		[query orderByAscending:@"createdAt"];
-//        [query orderByDescending:@"createdAt"];
+		//newest messages at the bottom - descending
+        [query orderByDescending:@"createdAt"];
         NSLog(@"Trying to retrieve from cache");
 		
 	
@@ -226,8 +227,8 @@ BOOL isFirstShown = YES;
         }]; */
     }
     __block int totalNumberOfEntries = 0;
-	[query orderByAscending:@"createdAt"];
-//    [query orderByDescending:@"createdAt"];
+	//newest messages at the bottom - descending
+    [query orderByDescending:@"createdAt"];
     [query countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
         if (!error) {
             // The count request succeeded. Log the count
@@ -255,7 +256,7 @@ BOOL isFirstShown = YES;
                             [insertIndexPaths addObject:newPath];
                         } 
                         [chatTable beginUpdates];
-                        [chatTable insertRowsAtIndexPaths:insertIndexPaths withRowAnimation:UITableViewRowAnimationTop];
+                        [chatTable insertRowsAtIndexPaths:insertIndexPaths withRowAnimation:UITableViewRowAnimationBottom];
                         [chatTable endUpdates];
                         [chatTable reloadData];
                         [chatTable scrollsToTop];
