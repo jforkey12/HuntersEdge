@@ -284,6 +284,7 @@ BOOL isFirstShown = YES;
 {
 	static NSString *CellIdentifier = @"chatCellIdentifier";
     chatCell *cell = (chatCell *) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	[cell setBackgroundColor:[UIColor clearColor]];
     
     if (cell == nil) {
         NSArray* topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"chatCell" owner:self options:nil];

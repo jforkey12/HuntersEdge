@@ -220,6 +220,7 @@
 - (void)postWasCreated:(NSNotification *)note {
 	HEAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 	[self queryForAllPostsNearLocation:appDelegate.currentLocation withNearbyDistance:appDelegate.filterDistance];
+	[self queryForAllHuntersNearLocation:appDelegate.currentLocation withNearbyDistance:appDelegate.filterDistance];
 }
 
 #pragma mark - UITabBar-based actions
@@ -474,10 +475,18 @@
 		else {
 			pinView.annotation = annotation;
 		}
+	if ([annotation isKindOfClass:[HEPost class]]){
+		NSLog(@"post found");
 		pinView.pinColor = [(HEPost *)annotation pinColor];
 		pinView.animatesDrop = [((HEPost *)annotation) animatesDrop];
 		pinView.canShowCallout = YES;
-
+	}
+	else if ([annotation isKindOfClass:[HEHunter class]]){
+		NSLog(@"hunter found");
+		pinView.pinColor = [(HEHunter *)annotation pinColor];
+		pinView.animatesDrop = [((HEHunter *)annotation) animatesDrop];
+		pinView.canShowCallout = YES;
+	}
 		return pinView;
 	//}
 	
@@ -514,7 +523,7 @@
 #pragma mark - Fetch map elements
 
 - (void)queryForAllHuntersNearLocation:(CLLocation *)currentLocation withNearbyDistance:(CLLocationAccuracy)nearbyDistance {
-	PFQuery *query = [PFQuery queryWithClassName:@"hunterLocations"];
+	PFQuery *query2 = [PFQuery queryWithClassName:@"hunterLocations"];
 	
 	if (currentLocation == nil) {
 		NSLog(@"%s got a nil location!", __PRETTY_FUNCTION__);
@@ -523,16 +532,16 @@
 	// If no objects are loaded in memory, we look to the cache first to fill the table
 	// and then subsequently do a query against the network.
 	if ([self.allHunters count] == 0) {
-		query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+		query2.cachePolicy = kPFCachePolicyCacheThenNetwork;
 	}
 	
 	// Query for posts sort of kind of near our current location.
 	PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:currentLocation.coordinate.latitude longitude:currentLocation.coordinate.longitude];
-	[query whereKey:kHEParseLocationKey nearGeoPoint:point withinKilometers:kHEWallPostMaximumSearchDistance];
-	[query includeKey:kHEParseUserKey];
-	query.limit = kHEWallHuntersSearch;
+	[query2 whereKey:kHEParseLocationKey nearGeoPoint:point withinKilometers:kHEWallPostMaximumSearchDistance];
+	[query2 includeKey:kHEParseUserKey];
+	query2.limit = kHEWallHuntersSearch;
 	
-	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+	[query2 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 		if (error) {
 			NSLog(@"error in geo query!"); // todo why is this ever happening?
 		} else {
@@ -692,6 +701,7 @@
 		if (distanceFromCurrent > nearbyDistance) { // Outside search radius
 			[post setTitleAndSubtitleOutsideDistance:YES];
 			[mapView viewForAnnotation:post];
+			
 			[(MKPinAnnotationView *) [mapView viewForAnnotation:post] setPinColor:post.pinColor];
 		} else {
 			[post setTitleAndSubtitleOutsideDistance:NO]; // Inside search radius

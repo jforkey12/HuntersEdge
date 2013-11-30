@@ -50,6 +50,7 @@
                     </textView>
                 </subviews>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="5" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" id="LPZ-4Y-znZ"/>
                 <constraint firstItem="4" firstAttribute="top" secondItem="3" secondAttribute="top" constant="16" id="PEc-tK-VCG"/>

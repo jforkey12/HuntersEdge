@@ -301,6 +301,7 @@ static NSUInteger const kHETableViewMainSection = 0;
 	// And return this height plus cell padding and the offset of the bubble image height (without taking into account the text height twice)
 	CGFloat rowHeight = kHECellPaddingTop + textSize.height + nameSize.height + kHECellBkgdOffset;
 	return rowHeight;
+	
 }
 
 

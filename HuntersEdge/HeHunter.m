@@ -30,8 +30,8 @@
 	self = [super init];
 	if (self) {
 		self.coordinate = aCoordinate;
-		self.title = aTitle;
-		self.subtitle = aSubtitle;
+//		self.title = aTitle;
+//		self.subtitle = aSubtitle;
 		self.animatesDrop = NO;
 	}
 	return self;
