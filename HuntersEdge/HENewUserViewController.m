@@ -114,7 +114,7 @@
 }
 
 - (IBAction)cancel:(id)sender {
-	[self.presentingViewController dismissModalViewControllerAnimated:YES];
+	[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)done:(id)sender {
@@ -245,7 +245,7 @@
 
 		HEWallViewController *wallViewController = [[HEWallViewController alloc] initWithNibName:nil bundle:nil];
 		[(UINavigationController *)self.presentingViewController pushViewController:wallViewController animated:NO];
-		[self.presentingViewController dismissModalViewControllerAnimated:YES];
+		[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 	}];
 }
 

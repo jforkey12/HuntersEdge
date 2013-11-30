@@ -117,6 +117,7 @@ static NSString * const defaultsLocationKey = @"currentLocation";
 	NSDictionary *userInfo = [NSDictionary dictionaryWithObject:currentLocation forKey:kHELocationKey];
 	dispatch_async(dispatch_get_main_queue(), ^{
 		[[NSNotificationCenter defaultCenter] postNotificationName:kHELocationChangeNotification object:nil userInfo:userInfo];
+		
 	});
 }
 

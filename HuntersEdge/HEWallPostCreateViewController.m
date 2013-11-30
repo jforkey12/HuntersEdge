@@ -76,7 +76,8 @@
 #pragma mark UINavigationBar-based actions
 
 - (IBAction)cancelPost:(id)sender {
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:nil];
+//	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (IBAction)postPost:(id)sender {
@@ -127,8 +128,7 @@
 			NSLog(@"Failed to save.");
 		}
 	}];
-
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark UITextView notification methods

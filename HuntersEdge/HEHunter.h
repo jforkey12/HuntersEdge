@@ -1,5 +1,5 @@
 //
-//  HEPost.h
+//  HEHunter.h
 //  Hunter's Edge
 //
 //  Created by James Forkey on 2/8/12.

@@ -193,7 +193,9 @@ static uint16_t const kHESettingsTableViewLogoutNumberOfRows = 1;
 		
 		// Configure the cell.
 		cell.textLabel.text = @"Log out of Hunter's Edge";
-		cell.textLabel.textAlignment = UITextAlignmentCenter;
+		cell.textLabel.textAlignment = NSTextAlignmentCenter;
+		
+//		DEPRECATED 6.0: cell.textLabel.textAlignment = UITextAlignmentCenter;
 		
 		return cell;
 	}
@@ -253,8 +255,9 @@ static uint16_t const kHESettingsTableViewLogoutNumberOfRows = 1;
 	if (buttonIndex == kHESettingsLogoutDialogLogout) {
 		// Log out.
 		[PFUser logOut];
+		[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 		
-		[self.presentingViewController dismissModalViewControllerAnimated:YES];
+//		DEPRECATED 6.0: [self.presentingViewController dismissModalViewControllerAnimated:YES];
 		
 		HEAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 		[appDelegate presentWelcomeViewController];

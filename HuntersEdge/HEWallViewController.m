@@ -49,7 +49,9 @@
 - (IBAction)settingsButtonSelected:(id)sender;
 - (IBAction)postButtonSelected:(id)sender;
 - (void)queryForAllPostsNearLocation:(CLLocation *)currentLocation withNearbyDistance:(CLLocationAccuracy)nearbyDistance;
+- (void)queryForAllHuntersNearLocation:(CLLocation *)currentLocation withNearbyDistance:(CLLocationAccuracy)nearbyDistance;
 - (void)updatePostsForLocation:(CLLocation *)location withNearbyDistance:(CLLocationAccuracy) filterDistance;
+- (void)updateHuntersForLocation:(CLLocation *)location withNearbyDistance:(CLLocationAccuracy) filterDistance;
 
 // NSNotification callbacks
 - (void)distanceFilterDidChange:(NSNotification *)note;
@@ -119,17 +121,19 @@
 										  initWithTarget:self action:@selector(handleLongPress:)];
 	lpgr.minimumPressDuration = 1.0; //user needs to press for 1 second
 	[self.mapView addGestureRecognizer:lpgr];
-
+	
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	[locationManager startUpdatingLocation];
+	[locationManager startUpdatingHeading];
 	[super viewWillAppear:animated];
 	[[self navigationController] setNavigationBarHidden:YES animated:NO];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
 	[locationManager stopUpdatingLocation];
+	[locationManager stopUpdatingHeading];
 	[super viewDidDisappear:animated];
 }
 
@@ -140,6 +144,7 @@
 
 - (void)dealloc {
 	[locationManager stopUpdatingLocation];
+	[locationManager stopUpdatingHeading];
 	
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:kHEFilterDistanceChangeNotification object:nil];
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:kHELocationChangeNotification object:nil];
@@ -163,6 +168,7 @@
 
 	// Update our pins for the new filter distance:
 	[self updatePostsForLocation:appDelegate.currentLocation withNearbyDistance:filterDistance];
+	[self updateHuntersForLocation:appDelegate.currentLocation withNearbyDistance:filterDistance];
 	
 	// If they panned the map since our last location update, don't recenter it.
 	if (!self.mapPannedSinceLocationUpdate) {
@@ -205,8 +211,10 @@
 
 	// Update the map with new pins:
 	[self queryForAllPostsNearLocation:appDelegate.currentLocation withNearbyDistance:appDelegate.filterDistance];
+	[self queryForAllHuntersNearLocation:appDelegate.currentLocation withNearbyDistance:appDelegate.filterDistance];
 	// And update the existing pins to reflect any changes in filter distance:
 	[self updatePostsForLocation:appDelegate.currentLocation withNearbyDistance:appDelegate.filterDistance];
+	[self updateHuntersForLocation:appDelegate.currentLocation withNearbyDistance:appDelegate.filterDistance];
 }
 
 - (void)postWasCreated:(NSNotification *)note {
@@ -343,6 +351,31 @@
 	if (currentLocation) {
 		HEAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 		appDelegate.currentLocation = currentLocation;
+		PFUser *user = [PFUser currentUser];
+		CLLocationCoordinate2D currentCoordinate = currentLocation.coordinate;
+		PFGeoPoint *currentPoint = [PFGeoPoint geoPointWithLatitude:currentCoordinate.latitude longitude:currentCoordinate.longitude];
+		PFObject *myLocation = [PFObject objectWithClassName:@"hunterLocations"];
+		//myLocation[@"userLocation"] = appDelegate.currentLocation;
+		NSLog(@"Saving myLocation to Parse.");
+		[myLocation setObject:user forKey:kHEParseUserKey];
+		[myLocation setObject:currentPoint forKey:@"userLocation"];
+		[myLocation saveEventually:^(BOOL succeeded, NSError *error) {
+			if (error) {
+				NSLog(@"Couldn't save!");
+				NSLog(@"%@", error);
+				UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[[error userInfo] objectForKey:@"error"] message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+				[alertView show];
+				return;
+			}
+			if (succeeded) {
+				NSLog(@"Successfully saved!");
+				NSLog(@"%@", myLocation);
+			} else {
+				NSLog(@"Failed to save.");
+			}
+		}];
+
+
 	}
 }
 
@@ -427,8 +460,8 @@
 	static NSString *pinIdentifier = @"CustomPinAnnotation";
 
 	// Handle any custom annotations.
-	if ([annotation isKindOfClass:[HEPost class]])
-	{
+	//if ([annotation isKindOfClass:[HEPost class]])
+	//{
 		// Try to dequeue an existing pin view first.
 		MKPinAnnotationView *pinView = (MKPinAnnotationView*)[aMapView dequeueReusableAnnotationViewWithIdentifier:pinIdentifier];
 
@@ -446,8 +479,8 @@
 		pinView.canShowCallout = YES;
 
 		return pinView;
-	}
-
+	//}
+	
 	return nil;
 }
 
@@ -481,7 +514,7 @@
 #pragma mark - Fetch map elements
 
 - (void)queryForAllHuntersNearLocation:(CLLocation *)currentLocation withNearbyDistance:(CLLocationAccuracy)nearbyDistance {
-	PFQuery *query = [PFQuery queryWithClassName:kHEParseHuntersClassKey];
+	PFQuery *query = [PFQuery queryWithClassName:@"hunterLocations"];
 	
 	if (currentLocation == nil) {
 		NSLog(@"%s got a nil location!", __PRETTY_FUNCTION__);
@@ -525,7 +558,7 @@
 					[newHunters addObject:newHunter];
 				}
 			}
-			// newPosts now contains our new objects.
+			// newHunters now contains our new objects.
 			
 			// 2. Find hunters in allHunters that didn't make the cut.
 			NSMutableArray *huntersToRemove = [[NSMutableArray alloc] initWithCapacity:kHEWallHuntersSearch];
@@ -667,5 +700,21 @@
 		}
 	}
 }
+	- (void)updateHuntersForLocation:(CLLocation *)currentLocation withNearbyDistance:(CLLocationAccuracy) nearbyDistance {
+		for (HEHunter *hunter in allHunters) {
+			CLLocation *objectLocation = [[CLLocation alloc] initWithLatitude:hunter.coordinate.latitude longitude:hunter.coordinate.longitude];
+			// if this hunter is outside the filter distance, don't show the regular callout.
+			CLLocationDistance distanceFromCurrent = [currentLocation distanceFromLocation:objectLocation];
+			if (distanceFromCurrent > nearbyDistance) { // Outside search radius
+				[hunter setTitleAndSubtitleOutsideDistance:YES];
+				[mapView viewForAnnotation:hunter];
+				[(MKPinAnnotationView *) [mapView viewForAnnotation:hunter] setPinColor:hunter.pinColor];
+			} else {
+				[hunter setTitleAndSubtitleOutsideDistance:NO]; // Inside search radius
+				[mapView viewForAnnotation:hunter];
+				[(MKPinAnnotationView *) [mapView viewForAnnotation:hunter] setPinColor:hunter.pinColor];
+			}
+		}
+	}
 
 @end

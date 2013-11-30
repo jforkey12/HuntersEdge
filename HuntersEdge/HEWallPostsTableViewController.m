@@ -198,7 +198,8 @@ static NSUInteger const kHETableViewMainSection = 0;
 	// Configure the cell content
 	UILabel *textLabel = (UILabel*) [cell.contentView viewWithTag:kHECellTextLabelTag];
 	textLabel.text = [object objectForKey:kHEParseTextKey];
-	textLabel.lineBreakMode = UILineBreakModeWordWrap;
+	textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+//	textLabel.lineBreakMode = UILineBreakModeWordWrap;
 	textLabel.numberOfLines = 0;
 	textLabel.font = [UIFont systemFontOfSize:kHEWallPostTableViewFontSize];
 	textLabel.textColor = [UIColor whiteColor];
@@ -223,8 +224,9 @@ static NSUInteger const kHETableViewMainSection = 0;
 	
 	// Move cell content to the right position
 	// Calculate the size of the post's text and username
-	CGSize textSize = [[object objectForKey:kHEParseTextKey] sizeWithFont:[UIFont systemFontOfSize:kHEWallPostTableViewFontSize] constrainedToSize:CGSizeMake(kHEWallPostTableViewCellWidth, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
-	CGSize nameSize = [username sizeWithFont:[UIFont systemFontOfSize:kHEWallPostTableViewFontSize] forWidth:kHEWallPostTableViewCellWidth lineBreakMode:UILineBreakModeTailTruncation];
+	CGSize textSize = [[object objectForKey:kHEParseTextKey] sizeWithFont:[UIFont systemFontOfSize:kHEWallPostTableViewFontSize] constrainedToSize:CGSizeMake(kHEWallPostTableViewCellWidth, FLT_MAX) lineBreakMode:NSLineBreakByWordWrapping];
+	
+	CGSize nameSize = [username sizeWithFont:[UIFont systemFontOfSize:kHEWallPostTableViewFontSize] forWidth:kHEWallPostTableViewCellWidth lineBreakMode:NSLineBreakByTruncatingTail];
 	
 	
 	CGFloat cellHeight = [self tableView:tableView heightForRowAtIndexPath:indexPath]; // Get the height of the cell
@@ -293,8 +295,8 @@ static NSUInteger const kHETableViewMainSection = 0;
 	NSString *username = postFromObject.user.username;
 	
 	// Calculate what the frame to fit the post text and the username
-	CGSize textSize = [text sizeWithFont:[UIFont systemFontOfSize:kHEWallPostTableViewFontSize] constrainedToSize:CGSizeMake(kHEWallPostTableViewCellWidth, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
-	CGSize nameSize = [username sizeWithFont:[UIFont systemFontOfSize:kHEWallPostTableViewFontSize] forWidth:kHEWallPostTableViewCellWidth lineBreakMode:UILineBreakModeTailTruncation];
+	CGSize textSize = [text sizeWithFont:[UIFont systemFontOfSize:kHEWallPostTableViewFontSize] constrainedToSize:CGSizeMake(kHEWallPostTableViewCellWidth, FLT_MAX) lineBreakMode:NSLineBreakByWordWrapping];
+	CGSize nameSize = [username sizeWithFont:[UIFont systemFontOfSize:kHEWallPostTableViewFontSize] forWidth:kHEWallPostTableViewCellWidth lineBreakMode:NSLineBreakByTruncatingTail];
 
 	// And return this height plus cell padding and the offset of the bubble image height (without taking into account the text height twice)
 	CGFloat rowHeight = kHECellPaddingTop + textSize.height + nameSize.height + kHECellBkgdOffset;

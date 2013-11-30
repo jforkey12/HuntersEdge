@@ -1,5 +1,5 @@
 //
-//  HEPost.m
+//  HEHunter.m
 //  Hunter's Edge
 //
 //  Created by James Forkey on 2/8/12.
@@ -51,28 +51,28 @@
 }
 
 - (BOOL)equalToHunter:(HEHunter *)aHunter {
-	if (aHunter == nil) {
-		return NO;
-	}
+//	if (aHunter == nil) {
+//		return NO;
+//	}
+//
+//	if (aHunter.object && self.object) {
+//		// We have a PFObject inside the HEHunter, use that instead.
+//		if ([aHunter.object.objectId compare:self.object.objectId] != NSOrderedSame) {
+//			return NO;
+//		}
+//		return YES;
+//	} //else {
+//		// Fallback code:
+//
+//		//if ([aHunter.title compare:self.title] != NSOrderedSame ||
+//		//	[aHunter.subtitle compare:self.subtitle] != NSOrderedSame ||
+//		//	aHunter.coordinate.latitude != self.coordinate.latitude ||
+//		//	aHunter.coordinate.longitude != self.coordinate.longitude ) {
+//		//	return NO;
+		//}
 
-	if (aHunter.object && self.object) {
-		// We have a PFObject inside the HEHunter, use that instead.
-		if ([aHunter.object.objectId compare:self.object.objectId] != NSOrderedSame) {
-			return NO;
-		}
 		return YES;
-	} else {
-		// Fallback code:
-
-		if ([aHunter.title compare:self.title] != NSOrderedSame ||
-			[aHunter.subtitle compare:self.subtitle] != NSOrderedSame ||
-			aHunter.coordinate.latitude != self.coordinate.latitude ||
-			aHunter.coordinate.longitude != self.coordinate.longitude ) {
-			return NO;
-		}
-
-		return YES;
-	}
+	//}
 }
 
 - (void)setTitleAndSubtitleOutsideDistance:(BOOL)outside {

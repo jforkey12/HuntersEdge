@@ -143,26 +143,25 @@
                         
             // 4) Present picker in main thread
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.navigationController presentModalViewController:_picker animated:YES];    
+				[self.navigationController presentViewController:_picker animated:YES completion:nil];
                 [SVProgressHUD dismiss];
             });
             
         });        
         
-    }  else {        
-        [self.navigationController presentModalViewController:_picker animated:YES];    
+    }  else {
+		[self.navigationController presentViewController:_picker animated:YES completion:nil];
     }
 }
 
 #pragma mark UIImagePickerControllerDelegate
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {    
-    
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
     UIImage *fullImage = (UIImage *) [info objectForKey:UIImagePickerControllerOriginalImage]; 
     

@@ -65,7 +65,7 @@
 #pragma mark - IBActions
 
 - (IBAction)cancel:(id)sender {
-	[self.presentingViewController dismissModalViewControllerAnimated:YES];
+	[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)done:(id)sender {
@@ -175,7 +175,7 @@
 		if (user) {
 			HEWallViewController *wallViewController = [[HEWallViewController alloc] initWithNibName:nil bundle:nil];
 			[(UINavigationController *)self.presentingViewController pushViewController:wallViewController animated:NO];
-			[self.presentingViewController dismissModalViewControllerAnimated:YES];
+			[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 		} else {
 			// Didn't get a user.
 			NSLog(@"%s didn't get a user!", __PRETTY_FUNCTION__);

@@ -56,6 +56,7 @@
 		A4773EC917B5BCE4000E4CAC /* UIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = A4773EC817B5BCE4000E4CAC /* UIImageExtras.m */; };
 		A4773ECC17B5BD4A000E4CAC /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A4773ECB17B5BD4A000E4CAC /* SVProgressHUD.m */; };
 		A4773ECE17B5BE5D000E4CAC /* JournalDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4773ECD17B5BE5D000E4CAC /* JournalDetailViewController.xib */; };
+		A49C2DB2184A418C00F6AF13 /* Hunters_Edge-2.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = A49C2DB1184A418C00F6AF13 /* Hunters_Edge-2.mobileprovision */; };
 		A49F716917DE7DF000D5A069 /* HeHunter.m in Sources */ = {isa = PBXBuildFile; fileRef = A49F716817DE7DF000D5A069 /* HeHunter.m */; };
 		A49FF14C17EB91C7007EBF8C /* chatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49FF14B17EB91C7007EBF8C /* chatCell.xib */; };
 		A4D53CF617BBB8D900725921 /* JournalTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4D53CF517BBB8D900725921 /* JournalTableCell.xib */; };
@@ -155,6 +156,7 @@
 		A4773ECA17B5BD4A000E4CAC /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		A4773ECB17B5BD4A000E4CAC /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		A4773ECD17B5BE5D000E4CAC /* JournalDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JournalDetailViewController.xib; sourceTree = "<group>"; };
+		A49C2DB1184A418C00F6AF13 /* Hunters_Edge-2.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hunters_Edge-2.mobileprovision"; sourceTree = "<group>"; };
 		A49F716717DE7DF000D5A069 /* HEHunter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEHunter.h; sourceTree = "<group>"; };
 		A49F716817DE7DF000D5A069 /* HeHunter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeHunter.m; sourceTree = "<group>"; };
 		A49FF14B17EB91C7007EBF8C /* chatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = chatCell.xib; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 		E56E83FD14D72E1100E856AB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A49C2DB1184A418C00F6AF13 /* Hunters_Edge-2.mobileprovision */,
 				E5CAAFE914D7316F00D97A18 /* HEWelcomeViewController.xib */,
 				E5E3D1F114DA20210074DA18 /* HENewUserViewController.xib */,
 				A40EDB8B17B00BDC005CB9E5 /* HEChatRoomViewController.xib */,
@@ -546,6 +549,7 @@
 				A4773EB017B58B40000E4CAC /* crosshair.png in Resources */,
 				A4773EB217B58BEB000E4CAC /* crosshair_small.png in Resources */,
 				A4773EB417B58BF0000E4CAC /* crosshair_small.png in Resources */,
+				A49C2DB2184A418C00F6AF13 /* Hunters_Edge-2.mobileprovision in Resources */,
 				A4773EC617B5BA1F000E4CAC /* JournalViewController.xib in Resources */,
 				A4773ECE17B5BE5D000E4CAC /* JournalDetailViewController.xib in Resources */,
 				A4D53CF617BBB8D900725921 /* JournalTableCell.xib in Resources */,
@@ -688,7 +692,7 @@
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_LABEL = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/HuntersEdge/HuntersEdge-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -714,7 +718,7 @@
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_LABEL = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/HuntersEdge/HuntersEdge-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -766,7 +770,7 @@
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_LABEL = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/HuntersEdge/HuntersEdge-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -819,7 +823,7 @@
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_LABEL = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/HuntersEdge/HuntersEdge-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
