@@ -32,7 +32,6 @@
 @property (nonatomic, assign) BOOL mapPinsPlaced;
 @property (nonatomic, assign) BOOL mapPannedSinceLocationUpdate;
 
-// posts:
 @property (nonatomic, strong) NSMutableArray *allPosts;
 @property (nonatomic, strong) NSMutableArray *allHunters;
 
@@ -532,12 +531,13 @@
 	// If no objects are loaded in memory, we look to the cache first to fill the table
 	// and then subsequently do a query against the network.
 	if ([self.allHunters count] == 0) {
+		NSLog(@"No hunters found.. cache");
 		query2.cachePolicy = kPFCachePolicyCacheThenNetwork;
 	}
 	
 	// Query for posts sort of kind of near our current location.
 	PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:currentLocation.coordinate.latitude longitude:currentLocation.coordinate.longitude];
-	[query2 whereKey:kHEParseLocationKey nearGeoPoint:point withinKilometers:kHEWallPostMaximumSearchDistance];
+	[query2 whereKey:kHEParseHunterLocationKey nearGeoPoint:point withinKilometers:kHEWallPostMaximumSearchDistance];
 	[query2 includeKey:kHEParseUserKey];
 	query2.limit = kHEWallHuntersSearch;
 	
@@ -567,6 +567,7 @@
 					[newHunters addObject:newHunter];
 				}
 			}
+			
 			// newHunters now contains our new objects.
 			
 			// 2. Find hunters in allHunters that didn't make the cut.
@@ -577,9 +578,11 @@
 				for (HEHunter *allNewHunter in allNewHunters) {
 					if ([currentHunter equalToHunter:allNewHunter]) {
 						found = YES;
+						NSLog((@"found is yes!!"));
 					}
 				}
 				if (!found) {
+					NSLog(@"removing hunter..");
 					[huntersToRemove addObject:currentHunter];
 				}
 			}

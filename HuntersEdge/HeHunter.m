@@ -39,7 +39,7 @@
 
 - (id)initWithPFObject:(PFObject *)anObject {
 	self.object = anObject;
-	self.geopoint = [anObject objectForKey:kHEParseLocationKey];
+	self.geopoint = [anObject objectForKey:kHEParseHunterLocationKey];
 	self.user = [anObject objectForKey:kHEParseUserKey];
 
 	[anObject fetchIfNeeded]; 

@@ -25,6 +25,7 @@ static NSString * const kHEParseUserKey = @"user";
 static NSString * const kHEParseUsernameKey = @"username";
 static NSString * const kHEParseTextKey = @"text";
 static NSString * const kHEParseLocationKey = @"location";
+static NSString * const kHEParseHunterLocationKey = @"userLocation";
 
 // NSNotification userInfo keys:
 static NSString * const kHEFilterDistanceKey = @"filterDistance";
