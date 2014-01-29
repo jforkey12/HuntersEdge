@@ -1,0 +1,32 @@
+<?xml version='1.0'?>
+<!DOCTYPE signatures SYSTEM "file://localhost/System/Library/DTDs/BridgeSupport.dtd">
+<signatures version='1.0'>
+<depends_on path='/System/Library/Frameworks/Accounts.framework'/>
+<depends_on path='/System/Library/Frameworks/CFNetwork.framework'/>
+<depends_on path='/System/Library/Frameworks/Security.framework'/>
+<depends_on path='/System/Library/Frameworks/CoreLocation.framework'/>
+<depends_on path='/System/Library/Frameworks/SystemConfiguration.framework'/>
+<depends_on path='/System/Library/Frameworks/CoreFoundation.framework'/>
+<depends_on path='/System/Library/Frameworks/Foundation.framework'/>
+<depends_on path='/System/Library/Frameworks/AppKit.framework'/>
+<depends_on path='/System/Library/Frameworks/CoreData.framework'/>
+<constant name='SLServiceTypeFacebook' type64='@'/>
+<constant name='SLServiceTypeLinkedIn' type64='@'/>
+<constant name='SLServiceTypeSinaWeibo' type64='@'/>
+<constant name='SLServiceTypeTencentWeibo' type64='@'/>
+<constant name='SLServiceTypeTwitter' type64='@'/>
+<enum name='SLRequestMethodDELETE' value64='2'/>
+<enum name='SLRequestMethodGET' value64='0'/>
+<enum name='SLRequestMethodPOST' value64='1'/>
+<enum name='SLRequestMethodPUT' value64='3'/>
+<class name='SLRequest'>
+<method selector='performRequestWithHandler:'>
+<arg function_pointer='true' index='0' type64='@?'>
+<arg type64='@'/>
+<arg type64='@'/>
+<arg type64='@'/>
+<retval type64='v'/>
+</arg>
+</method>
+</class>
+</signatures>

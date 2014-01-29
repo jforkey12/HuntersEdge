@@ -62,6 +62,7 @@
 		A4D53CF617BBB8D900725921 /* JournalTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4D53CF517BBB8D900725921 /* JournalTableCell.xib */; };
 		A4D53CF817BBCC3900725921 /* doe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A4D53CF717BBCC3900725921 /* doe.jpg */; };
 		AB180B8E18996D5C00E37B5B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB180B8D18996D5C00E37B5B /* FacebookSDK.framework */; };
+		AB180B9218998A8B00E37B5B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB180B9118998A8B00E37B5B /* Social.framework */; };
 		C4FD6130172751E200F61563 /* HEWallPostsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E572726A14E0807F004A9423 /* HEWallPostsTableViewController.m */; };
 		E5458B6614D77BEA003BE4FF /* HESettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5458B6414D77BEA003BE4FF /* HESettingsViewController.m */; };
 		E5458B6714D77BEA003BE4FF /* HESettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5458B6514D77BEA003BE4FF /* HESettingsViewController.xib */; };
@@ -164,6 +165,7 @@
 		A4D53CF517BBB8D900725921 /* JournalTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JournalTableCell.xib; sourceTree = "<group>"; };
 		A4D53CF717BBCC3900725921 /* doe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = doe.jpg; sourceTree = "<group>"; };
 		AB180B8D18996D5C00E37B5B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		AB180B9118998A8B00E37B5B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Social.framework; sourceTree = "<group>"; };
 		E5458B6314D77BEA003BE4FF /* HESettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HESettingsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		E5458B6414D77BEA003BE4FF /* HESettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HESettingsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E5458B6514D77BEA003BE4FF /* HESettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HESettingsViewController.xib; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				E5C3303E14D9C3AE00089B64 /* MobileCoreServices.framework in Frameworks */,
 				E5C3303C14D9C3A800089B64 /* SystemConfiguration.framework in Frameworks */,
 				E5C3303A14D9C3A200089B64 /* CFNetwork.framework in Frameworks */,
+				AB180B9218998A8B00E37B5B /* Social.framework in Frameworks */,
 				E5C3303814D9C39900089B64 /* AudioToolbox.framework in Frameworks */,
 				E56E83FB14D72E1100E856AB /* CoreGraphics.framework in Frameworks */,
 				E5CAAFFA14D738E800D97A18 /* CoreLocation.framework in Frameworks */,
@@ -323,6 +326,7 @@
 		E56E83F514D72E1100E856AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB180B9118998A8B00E37B5B /* Social.framework */,
 				AB180B8D18996D5C00E37B5B /* FacebookSDK.framework */,
 				A4773EA517B2EA32000E4CAC /* Parse.framework */,
 				E5C3304314D9C3C900089B64 /* QuartzCore.framework */,
@@ -698,6 +702,10 @@
 				GCC_WARN_UNUSED_LABEL = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/HuntersEdge/HuntersEdge-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/trevorhodde/Desktop/HuntersEdge,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -725,6 +733,10 @@
 				GCC_WARN_UNUSED_LABEL = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/HuntersEdge/HuntersEdge-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/trevorhodde/Desktop/HuntersEdge,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -778,6 +790,10 @@
 				GCC_WARN_UNUSED_LABEL = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/HuntersEdge/HuntersEdge-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/trevorhodde/Desktop/HuntersEdge,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -832,6 +848,10 @@
 				GCC_WARN_UNUSED_LABEL = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/HuntersEdge/HuntersEdge-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/trevorhodde/Desktop/HuntersEdge,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
