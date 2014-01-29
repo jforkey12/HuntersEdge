@@ -37,6 +37,8 @@ static NSString * const defaultsLocationKey = @"currentLocation";
 	[Parse setApplicationId:@"R17iFzDeT9M0vddj7pVsS1JSJMZquqO6TNzq01nB" clientKey:@"bm2XdDAcRqyoy9OKmnEQSzl1VCFtuwCuGAofEye8"];
 	
 	[PFFacebookUtils initializeFacebook];
+	// Override point for customization after application launch.
+	[FBLoginView class];
 	
 	[PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 	

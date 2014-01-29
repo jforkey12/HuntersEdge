@@ -72,13 +72,11 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="24">
-                    <rect key="frame" x="60" y="304" width="200" height="50"/>
+                <view contentMode="scaleToFill" id="Xb4-Xd-Kd8" customClass="FBLoginView">
+                    <rect key="frame" x="58" y="287" width="200" height="49"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" backgroundImage="social-media-login-retna1.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -87,6 +85,5 @@
     </objects>
     <resources>
         <image name="hunting-background.png" width="320" height="480"/>
-        <image name="social-media-login-retna1.png" width="435" height="91"/>
     </resources>
 </document>
