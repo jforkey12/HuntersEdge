@@ -211,4 +211,18 @@
 	}];
 }
 
+- (IBAction)signInWithFacebook:(id)sender {
+	@synchronized(self) {
+		NSArray *permissionsArray = [NSArray arrayWithObjects:@"user_about_me", @"user_location", @"offline_access", nil];
+		
+		[PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error){
+			//Logged in successfully
+			// Tear down the activity view in all cases.
+			HEWallViewController *wallViewController = [[HEWallViewController alloc] initWithNibName:nil bundle:nil];
+			[(UINavigationController *)self.presentingViewController pushViewController:wallViewController animated:NO];
+			[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+		 }];
+	}
+}
+
 @end
