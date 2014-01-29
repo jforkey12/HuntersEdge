@@ -11,6 +11,7 @@
 @interface HELoginViewController : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *doneButton;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *facebookButton;
 
 @property (nonatomic, strong) IBOutlet UITextField *usernameField;
 @property (nonatomic, strong) IBOutlet UITextField *passwordField;

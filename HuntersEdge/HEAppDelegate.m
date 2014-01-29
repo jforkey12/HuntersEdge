@@ -36,6 +36,8 @@ static NSString * const defaultsLocationKey = @"currentLocation";
 	
 	[Parse setApplicationId:@"R17iFzDeT9M0vddj7pVsS1JSJMZquqO6TNzq01nB" clientKey:@"bm2XdDAcRqyoy9OKmnEQSzl1VCFtuwCuGAofEye8"];
 	
+	[PFFacebookUtils initializeFacebook];
+	
 	[PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -88,6 +90,20 @@ static NSString * const defaultsLocationKey = @"currentLocation";
     return YES;
 }
 
+// Set up the Facebook connections when the app loads up
+- (BOOL)application:(UIApplication *)application
+			openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [FBAppCall handleOpenURL:url
+                  sourceApplication:sourceApplication
+                        withSession:[PFFacebookUtils session]];
+}
+
+// if the app is now active, create a facebook session
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
+}
 
 #pragma mark - HEAppDelegate
 

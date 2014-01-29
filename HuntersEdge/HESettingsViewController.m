@@ -243,7 +243,7 @@ static uint16_t const kHESettingsTableViewLogoutNumberOfRows = 1;
 		self.filterDistance = distanceForCellInFeet * kHEFeetToMeters;
 	} else if (indexPath.section == kHESettingsTableViewLogout) {
 		[aTableView deselectRowAtIndexPath:indexPath animated:YES];
-		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Log out of Anywall?" message:nil delegate:self cancelButtonTitle:@"Log out" otherButtonTitles:@"Cancel", nil];
+		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Log out of Hunters Edge?" message:nil delegate:self cancelButtonTitle:@"Log out" otherButtonTitles:@"Cancel", nil];
 		[alertView show];
 	}
 }

@@ -59,6 +59,19 @@
 	</array>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleDefault</string>
+	<key>FacebookAppID</key>
+	<string>644924522211517</string>
+	<key>FacebookDisplayName</key>
+	<string>Hunters Edge</string>
+	<key> URL types </key>
+	<array>
+		<dict>
+			<key>URL Schemes</key>
+			<array>
+				<string>fb644924522211517</string>
+			</array>
+		</dict>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

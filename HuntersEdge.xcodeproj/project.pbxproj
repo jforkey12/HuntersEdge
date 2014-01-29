@@ -61,6 +61,7 @@
 		A49FF14C17EB91C7007EBF8C /* chatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49FF14B17EB91C7007EBF8C /* chatCell.xib */; };
 		A4D53CF617BBB8D900725921 /* JournalTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4D53CF517BBB8D900725921 /* JournalTableCell.xib */; };
 		A4D53CF817BBCC3900725921 /* doe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A4D53CF717BBCC3900725921 /* doe.jpg */; };
+		AB180B8E18996D5C00E37B5B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB180B8D18996D5C00E37B5B /* FacebookSDK.framework */; };
 		C4FD6130172751E200F61563 /* HEWallPostsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E572726A14E0807F004A9423 /* HEWallPostsTableViewController.m */; };
 		E5458B6614D77BEA003BE4FF /* HESettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5458B6414D77BEA003BE4FF /* HESettingsViewController.m */; };
 		E5458B6714D77BEA003BE4FF /* HESettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5458B6514D77BEA003BE4FF /* HESettingsViewController.xib */; };
@@ -162,6 +163,7 @@
 		A49FF14B17EB91C7007EBF8C /* chatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = chatCell.xib; sourceTree = "<group>"; };
 		A4D53CF517BBB8D900725921 /* JournalTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JournalTableCell.xib; sourceTree = "<group>"; };
 		A4D53CF717BBCC3900725921 /* doe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = doe.jpg; sourceTree = "<group>"; };
+		AB180B8D18996D5C00E37B5B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		E5458B6314D77BEA003BE4FF /* HESettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HESettingsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		E5458B6414D77BEA003BE4FF /* HESettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HESettingsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E5458B6514D77BEA003BE4FF /* HESettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HESettingsViewController.xib; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				E56E83F714D72E1100E856AB /* UIKit.framework in Frameworks */,
 				E56E83F914D72E1100E856AB /* Foundation.framework in Frameworks */,
 				A4773EA617B2EA32000E4CAC /* Parse.framework in Frameworks */,
+				AB180B8E18996D5C00E37B5B /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +323,7 @@
 		E56E83F514D72E1100E856AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB180B8D18996D5C00E37B5B /* FacebookSDK.framework */,
 				A4773EA517B2EA32000E4CAC /* Parse.framework */,
 				E5C3304314D9C3C900089B64 /* QuartzCore.framework */,
 				E5C3304114D9C3C200089B64 /* Security.framework */,
@@ -677,7 +681,8 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					/Users/trevorhodde/Desktop/HuntersEdge,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HuntersEdge/HuntersEdge-Prefix.pch";
@@ -703,7 +708,8 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					/Users/trevorhodde/Desktop/HuntersEdge,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HuntersEdge/HuntersEdge-Prefix.pch";
@@ -755,7 +761,8 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					/Users/trevorhodde/Desktop/HuntersEdge,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HuntersEdge/HuntersEdge-Prefix.pch";
@@ -808,7 +815,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					/Users/trevorhodde/Desktop/HuntersEdge,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HuntersEdge/HuntersEdge-Prefix.pch";
