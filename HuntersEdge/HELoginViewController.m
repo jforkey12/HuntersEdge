@@ -189,6 +189,16 @@
 			HEWallViewController *wallViewController = [[HEWallViewController alloc] initWithNibName:nil bundle:nil];
 			[(UINavigationController *)self.presentingViewController pushViewController:wallViewController animated:NO];
 			[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+			
+			// associate user with facebook account
+			if (![PFFacebookUtils isLinkedWithUser:user]) {
+				[PFFacebookUtils linkUser:user permissions:nil block:^(BOOL succeeded, NSError *error) {
+					if (succeeded) {
+						NSLog(@"Woohoo, user logged in with Facebook!");
+					}
+				}];
+			}
+			
 		} else {
 			// Didn't get a user.
 			NSLog(@"%s didn't get a user!", __PRETTY_FUNCTION__);
@@ -218,7 +228,7 @@
 		[PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error){
 			//Logged in successfully
 			// Tear down the activity view in all cases.
-			HEWallViewController *wallViewController = [[HEWallViewController alloc] initWithNibName:nil bundle:nil];
+			HELoginViewController *wallViewController = [[HELoginViewController alloc] initWithNibName:nil bundle:nil];
 			[(UINavigationController *)self.presentingViewController pushViewController:wallViewController animated:NO];
 			[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 		 }];

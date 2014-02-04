@@ -109,6 +109,18 @@
 	return enableDoneButton;
 }
 
+// the following two functions are responsible for making sure the keyboard
+// disappears if the background is touched
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	[self.view endEditing:YES];
+}
+
+- (IBAction)backgroundTouch:(id)sender {
+	[usernameField resignFirstResponder];
+	[passwordField resignFirstResponder];
+}
+
 - (void)textInputChanged:(NSNotification *)note {
 	doneButton.enabled = [self shouldEnableDoneButton];
 }
