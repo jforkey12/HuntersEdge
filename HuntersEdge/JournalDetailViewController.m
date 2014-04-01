@@ -20,10 +20,11 @@
 
 @synthesize detailItem = _detailItem;
 @synthesize detailDescriptionLabel = _detailDescriptionLabel;
-@synthesize titleField = _titleField;
 @synthesize entryView = _entryView;
 @synthesize imageView = _imageView;
 @synthesize picker = _picker;
+@synthesize titleLabel;
+@synthesize dateLabel;
 
 #pragma mark - Managing the detail item
 
@@ -48,7 +49,7 @@
     self.entryView.delegate = self;
     
     if (self.detailItem) {
-        self.titleField.text = self.detailItem.data.title;
+//        self.titleField.text = self.detailItem.data.title;
         self.entryView.rating = self.detailItem.data.rating;
         self.imageView.image = self.detailItem.fullImage;
     }
@@ -72,7 +73,7 @@
 
 - (void)viewDidUnload
 {
-    [self setTitleField:nil];
+//    [self setTitleField:nil];
     [self setEntryView:nil];
     [self setImageView:nil];
     [super viewDidUnload];
@@ -107,7 +108,7 @@
 }
 
 - (IBAction)titleFieldTextChanged:(id)sender {
-    self.detailItem.data.title = self.titleField.text;
+//    self.detailItem.data.title = self.titleField.text;
 }
 
 #pragma mark UITextFieldDelegate

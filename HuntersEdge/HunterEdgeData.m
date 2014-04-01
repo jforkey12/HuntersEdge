@@ -12,11 +12,13 @@
 
 @synthesize title = _title;
 @synthesize rating = _rating;
+@synthesize dateTime = _dateTime;
 
 - (id)initWithTitle:(NSString*)title rating:(float)rating {
     if ((self = [super init])) {
         self.title = title;
         self.rating = rating;
+		self.dateTime = _dateTime;
     }
     return self;
 }

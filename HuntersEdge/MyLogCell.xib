@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyLogCell" rowHeight="50" id="sMi-hs-bqk" customClass="MyLogCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sMi-hs-bqk" id="6W1-bk-oIC">
+                <rect key="frame" x="0.0" y="0.0" width="287" height="49"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65I-6p-zBB">
+                        <rect key="frame" x="65" y="8" width="197" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="197" id="lD1-Rz-bqT"/>
+                            <constraint firstAttribute="height" constant="21" id="zz9-ru-tcW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bV9-Lz-cfg">
+                        <rect key="frame" x="65" y="28" width="146" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Gb4-z0-WMV"/>
+                            <constraint firstAttribute="width" constant="146" id="kFX-aF-juH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ugw-32-LZg">
+                        <rect key="frame" x="7" y="2" width="50" height="45"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="9gL-dZ-EUp"/>
+                            <constraint firstAttribute="height" constant="45" id="IQd-03-nY5"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="bV9-Lz-cfg" secondAttribute="bottom" constant="1" id="1Oi-uO-o2w"/>
+                <constraint firstItem="65I-6p-zBB" firstAttribute="leading" secondItem="ugw-32-LZg" secondAttribute="trailing" constant="8" symbolic="YES" id="FgC-Pg-X04"/>
+                <constraint firstItem="bV9-Lz-cfg" firstAttribute="leading" secondItem="ugw-32-LZg" secondAttribute="trailing" constant="8" symbolic="YES" id="MGE-JB-AM9"/>
+                <constraint firstAttribute="bottom" secondItem="65I-6p-zBB" secondAttribute="bottom" constant="21" id="S8C-R4-ADE"/>
+                <constraint firstItem="ugw-32-LZg" firstAttribute="centerY" secondItem="sMi-hs-bqk" secondAttribute="centerY" constant="-0.5" id="aqu-yX-ymd"/>
+                <constraint firstItem="65I-6p-zBB" firstAttribute="leading" secondItem="sMi-hs-bqk" secondAttribute="leading" constant="65" id="tXP-jj-9QA"/>
+            </constraints>
+            <connections>
+                <outlet property="dateTime" destination="bV9-Lz-cfg" id="Dvj-uk-MQg"/>
+                <outlet property="smallImageView" destination="ugw-32-LZg" id="OUl-4z-0U4"/>
+                <outlet property="titleString" destination="65I-6p-zBB" id="HaV-iB-5bO"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

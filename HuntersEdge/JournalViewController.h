@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyLogCell.h"
+
 
 @interface JournalViewController : UITableViewController
 
-@property (strong) NSMutableArray *animals;
+@property (strong, nonatomic) NSMutableArray *myLogs;
+@property (strong, nonatomic) NSDateFormatter *dateFormat;
+@property (strong, nonatomic) NSDate *date;
+@property (strong, nonatomic) PFFile *thePFImage;
+@property (strong, nonatomic) NSData *theimageData;
+@property (strong, nonatomic) UIImage *theImage;
 
 @end

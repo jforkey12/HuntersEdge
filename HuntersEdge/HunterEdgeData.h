@@ -12,6 +12,7 @@
 
 @property (strong) NSString *title;
 @property (assign) float rating;
+@property (strong) NSString *dateTime;
 
 - (id)initWithTitle:(NSString*)title rating:(float)rating;
 

@@ -19,6 +19,7 @@
 #import "HEPost.h"
 #import <CoreLocation/CoreLocation.h>
 #import "HunterEdgeDoc.h"
+#import "QuartzCore/QuartzCore.h"
 
 // private methods and properties
 @interface HEWallViewController ()
@@ -231,15 +232,16 @@
 	tabBar.tag = 0;
 	
 	if (selectedTag == 0) {
-		HunterEdgeDoc *animal1 = [[HunterEdgeDoc alloc] initWithTitle:@"200lb Doe" rating:4 thumbImage:[UIImage imageNamed:@"doe.jpg"] fullImage:[UIImage imageNamed:@"doe.jpg"]];
-		
-		NSMutableArray *animals = [NSMutableArray arrayWithObjects:animal1, nil];
+//		HunterEdgeDoc *entry1 = [[HunterEdgeDoc alloc] initWithTitle:@"200lb Doe" rating:4 thumbImage:[UIImage imageNamed:@"doe.jpg"] fullImage:[UIImage imageNamed:@"doe.jpg"]];
+//		
+//		NSMutableArray *myLogs = [NSMutableArray arrayWithObjects:entry1, nil];
 		
 		UINavigationController * navController = (UINavigationController *) self.navigationController;
 		
 		JournalViewController *masterController = [[JournalViewController alloc] initWithNibName:@"JournalViewController" bundle:nil];
+
 		
-		masterController.animals = animals;
+//		masterController.myLogs= myLogs;
 		
 		for (UIView *subview in self.view.subviews) {
 			if (subview != tabBar)
@@ -329,8 +331,78 @@
 	
 	HEWallPostCreateViewController *createPostViewController = [[HEWallPostCreateViewController alloc] initWithNibName:nil bundle:nil];
 	[self.navigationController presentViewController:createPostViewController animated:YES completion:nil];
+		
+				
+		CLLocation *currentLocation = locationManager.location;
+		if (currentLocation) {
+			HEAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+			appDelegate.currentLocation = currentLocation;
+			PFUser *user = [PFUser currentUser];
+			CLLocationCoordinate2D currentCoordinate = currentLocation.coordinate;
+			PFGeoPoint *currentPoint = [PFGeoPoint geoPointWithLatitude:currentCoordinate.latitude longitude:currentCoordinate.longitude];
+			
+			//Get the formatted date and time for the Log entry
+			NSDate *now = [NSDate date];
+			NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+			[dateFormatter setTimeStyle:NSDateFormatterNoStyle];
 
-}
+			[dateFormatter setDateFormat:@"MMMyyyhhmmssa"];
+			
+			NSString *currentTime  = [dateFormatter stringFromDate:now ];
+			NSLog(@"Formatted time is: %@,", currentTime);
+
+			
+			//Take the screen capture for the default image
+			if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)])
+				UIGraphicsBeginImageContextWithOptions(self.view.window.bounds.size, NO, [UIScreen mainScreen].scale);
+			else
+				UIGraphicsBeginImageContext(self.view.window.bounds.size);
+			[self.view.window.layer renderInContext:UIGraphicsGetCurrentContext()];
+			UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+			UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+			UIGraphicsEndImageContext();
+			NSData *imageData = UIImageJPEGRepresentation(image, 0.5f);
+			//NSData * imageData = UIImagePNGRepresentation(image);
+			
+			//Create a string from the previous date/time to use for image name
+			NSString *pictureName = [currentTime stringByAppendingString:@"_image.jpg"];
+			[imageData writeToFile:pictureName atomically:YES];
+			
+			//Create the PFObject to store the time, date, weather, location, image, and brief details in
+			PFObject *myEntry = [PFObject objectWithClassName:@"logEntries"];
+			NSLog(@"Saving myLocation to Parse.");
+			
+			PFFile *imageFile = [PFFile fileWithName:pictureName data:imageData];
+
+			//Store the objects
+			[myEntry setObject:user forKey:kHEParseUserKey];
+			[myEntry setObject:currentPoint forKey:@"userLocation"];
+			[myEntry setObject:imageData forKey:@"picture"];
+			[myEntry setObject:@"Example Title" forKey:@"title"];
+//			[myEntry setObject:[PFUser currentUser] forKey:@"author"];
+			//This eventually should be set here...
+//			[myEntry setObject: forKey:@"title"]
+			
+			//Save the object to parse
+			[myEntry saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+				if (error) {
+					NSLog(@"Couldn't save!");
+					NSLog(@"%@", error);
+					UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[[error userInfo] objectForKey:@"error"] message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+					[alertView show];
+					return;
+				}
+				if (succeeded) {
+					NSLog(@"Successfully saved!");
+					NSLog(@"%@", myEntry);
+				} else {
+					NSLog(@"Failed to save.");
+				}
+			}];
+			
+		
+		}
+	}
 
 #pragma mark - CLLocationManagerDelegate methods and helpers
 

@@ -56,13 +56,19 @@
 		A4773EC917B5BCE4000E4CAC /* UIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = A4773EC817B5BCE4000E4CAC /* UIImageExtras.m */; };
 		A4773ECC17B5BD4A000E4CAC /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A4773ECB17B5BD4A000E4CAC /* SVProgressHUD.m */; };
 		A4773ECE17B5BE5D000E4CAC /* JournalDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4773ECD17B5BE5D000E4CAC /* JournalDetailViewController.xib */; };
-		A49C2DB2184A418C00F6AF13 /* Hunters_Edge-2.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = A49C2DB1184A418C00F6AF13 /* Hunters_Edge-2.mobileprovision */; };
 		A49F716917DE7DF000D5A069 /* HeHunter.m in Sources */ = {isa = PBXBuildFile; fileRef = A49F716817DE7DF000D5A069 /* HeHunter.m */; };
 		A49FF14C17EB91C7007EBF8C /* chatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49FF14B17EB91C7007EBF8C /* chatCell.xib */; };
-		A4D53CF617BBB8D900725921 /* JournalTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4D53CF517BBB8D900725921 /* JournalTableCell.xib */; };
 		A4D53CF817BBCC3900725921 /* doe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A4D53CF717BBCC3900725921 /* doe.jpg */; };
 		AB180B8E18996D5C00E37B5B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB180B8D18996D5C00E37B5B /* FacebookSDK.framework */; };
 		AB180B9218998A8B00E37B5B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB180B9118998A8B00E37B5B /* Social.framework */; };
+		B7A6222218CB6E2D005FE783 /* MyLogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A6222118CB6E2D005FE783 /* MyLogCell.m */; };
+		B7A6222418CB7386005FE783 /* MyLogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A6222318CB7386005FE783 /* MyLogCell.xib */; };
+		B7A6222C18CB7B00005FE783 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A6222B18CB7B00005FE783 /* gear.png */; };
+		B7A6222E18CB7B4B005FE783 /* gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A6222D18CB7B4B005FE783 /* gear@2x.png */; };
+		B7A6223018CB7EA1005FE783 /* world@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A6222F18CB7EA1005FE783 /* world@2x.png */; };
+		B7A6223418CB7F14005FE783 /* world.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A6223318CB7F14005FE783 /* world.png */; };
+		B7A6224218CB820E005FE783 /* book.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A6224118CB820E005FE783 /* book.png */; };
+		B7A6224418CB8271005FE783 /* book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A6224318CB8271005FE783 /* book@2x.png */; };
 		C4FD6130172751E200F61563 /* HEWallPostsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E572726A14E0807F004A9423 /* HEWallPostsTableViewController.m */; };
 		E5458B6614D77BEA003BE4FF /* HESettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5458B6414D77BEA003BE4FF /* HESettingsViewController.m */; };
 		E5458B6714D77BEA003BE4FF /* HESettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5458B6514D77BEA003BE4FF /* HESettingsViewController.xib */; };
@@ -158,14 +164,25 @@
 		A4773ECA17B5BD4A000E4CAC /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		A4773ECB17B5BD4A000E4CAC /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		A4773ECD17B5BE5D000E4CAC /* JournalDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JournalDetailViewController.xib; sourceTree = "<group>"; };
-		A49C2DB1184A418C00F6AF13 /* Hunters_Edge-2.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hunters_Edge-2.mobileprovision"; sourceTree = "<group>"; };
 		A49F716717DE7DF000D5A069 /* HEHunter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEHunter.h; sourceTree = "<group>"; };
 		A49F716817DE7DF000D5A069 /* HeHunter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeHunter.m; sourceTree = "<group>"; };
 		A49FF14B17EB91C7007EBF8C /* chatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = chatCell.xib; sourceTree = "<group>"; };
-		A4D53CF517BBB8D900725921 /* JournalTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JournalTableCell.xib; sourceTree = "<group>"; };
 		A4D53CF717BBCC3900725921 /* doe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = doe.jpg; sourceTree = "<group>"; };
 		AB180B8D18996D5C00E37B5B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		AB180B9118998A8B00E37B5B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Social.framework; sourceTree = "<group>"; };
+		B7A5AB0E18CBF22100CDD648 /* HEDevelopment.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = HEDevelopment.mobileprovision; sourceTree = "<group>"; };
+		B7A5AB0F18CBF22100CDD648 /* HEDistro.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = HEDistro.mobileprovision; sourceTree = "<group>"; };
+		B7A5AB1018CBF22C00CDD648 /* ios_development.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = ios_development.cer; sourceTree = "<group>"; };
+		B7A5AB1118CBF22C00CDD648 /* ios_distribution.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = ios_distribution.cer; sourceTree = "<group>"; };
+		B7A6222018CB6E2D005FE783 /* MyLogCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLogCell.h; sourceTree = "<group>"; };
+		B7A6222118CB6E2D005FE783 /* MyLogCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLogCell.m; sourceTree = "<group>"; };
+		B7A6222318CB7386005FE783 /* MyLogCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLogCell.xib; sourceTree = "<group>"; };
+		B7A6222B18CB7B00005FE783 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		B7A6222D18CB7B4B005FE783 /* gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear@2x.png"; sourceTree = "<group>"; };
+		B7A6222F18CB7EA1005FE783 /* world@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "world@2x.png"; sourceTree = "<group>"; };
+		B7A6223318CB7F14005FE783 /* world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world.png; sourceTree = "<group>"; };
+		B7A6224118CB820E005FE783 /* book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = book.png; sourceTree = "<group>"; };
+		B7A6224318CB8271005FE783 /* book@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "book@2x.png"; sourceTree = "<group>"; };
 		E5458B6314D77BEA003BE4FF /* HESettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HESettingsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		E5458B6414D77BEA003BE4FF /* HESettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HESettingsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E5458B6514D77BEA003BE4FF /* HESettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HESettingsViewController.xib; sourceTree = "<group>"; };
@@ -268,6 +285,16 @@
 		E526A82D14F331D40074109C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				B7A5AB1018CBF22C00CDD648 /* ios_development.cer */,
+				B7A5AB1118CBF22C00CDD648 /* ios_distribution.cer */,
+				B7A5AB0E18CBF22100CDD648 /* HEDevelopment.mobileprovision */,
+				B7A5AB0F18CBF22100CDD648 /* HEDistro.mobileprovision */,
+				B7A6224318CB8271005FE783 /* book@2x.png */,
+				B7A6224118CB820E005FE783 /* book.png */,
+				B7A6223318CB7F14005FE783 /* world.png */,
+				B7A6222F18CB7EA1005FE783 /* world@2x.png */,
+				B7A6222D18CB7B4B005FE783 /* gear@2x.png */,
+				B7A6222B18CB7B00005FE783 /* gear.png */,
 				A4D53CF717BBCC3900725921 /* doe.jpg */,
 				A4773EB117B58BEA000E4CAC /* crosshair_small.png */,
 				A4773EAD17B58B33000E4CAC /* crosshair.png */,
@@ -363,7 +390,6 @@
 		E56E83FD14D72E1100E856AB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A49C2DB1184A418C00F6AF13 /* Hunters_Edge-2.mobileprovision */,
 				E5CAAFE914D7316F00D97A18 /* HEWelcomeViewController.xib */,
 				E5E3D1F114DA20210074DA18 /* HENewUserViewController.xib */,
 				A40EDB8B17B00BDC005CB9E5 /* HEChatRoomViewController.xib */,
@@ -371,7 +397,7 @@
 				E5C3304F14DA024F00089B64 /* HELoginViewController.xib */,
 				E5CAAFF314D733DC00D97A18 /* HEWallViewController.xib */,
 				A4773EC517B5BA1E000E4CAC /* JournalViewController.xib */,
-				A4D53CF517BBB8D900725921 /* JournalTableCell.xib */,
+				B7A6222318CB7386005FE783 /* MyLogCell.xib */,
 				A4773ECD17B5BE5D000E4CAC /* JournalDetailViewController.xib */,
 				E5458B6B14D8B2E3003BE4FF /* HEWallPostCreateViewController.xib */,
 				E5458B6514D77BEA003BE4FF /* HESettingsViewController.xib */,
@@ -394,6 +420,8 @@
 				A4773EC217B5B7BA000E4CAC /* HunterEdgeDoc.m */,
 				A40EDB8417B00B42005CB9E5 /* chatCell.h */,
 				A40EDB8517B00B42005CB9E5 /* chatCell.m */,
+				B7A6222018CB6E2D005FE783 /* MyLogCell.h */,
+				B7A6222118CB6E2D005FE783 /* MyLogCell.m */,
 				E5743F2714E30154004BBD5C /* HESearchRadius.h */,
 				E5743F2814E30154004BBD5C /* HESearchRadius.m */,
 				A49F716717DE7DF000D5A069 /* HEHunter.h */,
@@ -516,11 +544,13 @@
 			files = (
 				E56E840114D72E1100E856AB /* InfoPlist.strings in Resources */,
 				E5CAAFEB14D7316F00D97A18 /* HEWelcomeViewController.xib in Resources */,
+				B7A6222E18CB7B4B005FE783 /* gear@2x.png in Resources */,
 				E5CAAFF514D733DC00D97A18 /* HEWallViewController.xib in Resources */,
 				E5458B6714D77BEA003BE4FF /* HESettingsViewController.xib in Resources */,
 				E5458B6D14D8B2E3003BE4FF /* HEWallPostCreateViewController.xib in Resources */,
 				E5C3305114DA024F00089B64 /* HELoginViewController.xib in Resources */,
 				E5E3D1F314DA20220074DA18 /* HENewUserViewController.xib in Resources */,
+				B7A6223418CB7F14005FE783 /* world.png in Resources */,
 				74D131E61582A7420065F1D2 /* HuntersEdge-Info.plist in Resources */,
 				74D132051582A8E90065F1D2 /* bar.png in Resources */,
 				74D132061582A8E90065F1D2 /* bar@2x.png in Resources */,
@@ -529,21 +559,26 @@
 				74D132091582A8E90065F1D2 /* Button.png in Resources */,
 				74D1320A1582A8E90065F1D2 /* Button@2x.png in Resources */,
 				74D1320B1582A8E90065F1D2 /* grayBubble.png in Resources */,
+				B7A6224218CB820E005FE783 /* book.png in Resources */,
 				74D1320C1582A8E90065F1D2 /* grayBubble@2x.png in Resources */,
 				74D132151582A8E90065F1D2 /* just_background.png in Resources */,
 				74D132161582A8E90065F1D2 /* just_background@2x.png in Resources */,
 				74D132171582A8E90065F1D2 /* Map.png in Resources */,
 				74D132181582A8E90065F1D2 /* Map@2x.png in Resources */,
+				B7A6223018CB7EA1005FE783 /* world@2x.png in Resources */,
 				A446C51717ABFD1800E6553F /* MainViewController.xib in Resources */,
 				A446C51917AD513300E6553F /* hunting-background@2x.png in Resources */,
 				A40EDB8017AFC488005CB9E5 /* TODO in Resources */,
 				A40EDB8C17B00BDC005CB9E5 /* HEChatRoomViewController.xib in Resources */,
 				A40EDB9717B00C38005CB9E5 /* background_pattern.png in Resources */,
+				B7A6222418CB7386005FE783 /* MyLogCell.xib in Resources */,
 				A40EDB9817B00C38005CB9E5 /* background_pattern@2x.png in Resources */,
+				B7A6222C18CB7B00005FE783 /* gear.png in Resources */,
 				A40EDB9917B00C38005CB9E5 /* chat.png in Resources */,
 				A40EDB9A17B00C38005CB9E5 /* chat@2x.png in Resources */,
 				A40EDB9B17B00C38005CB9E5 /* first.png in Resources */,
 				A40EDB9C17B00C38005CB9E5 /* first@2x.png in Resources */,
+				B7A6224418CB8271005FE783 /* book@2x.png in Resources */,
 				A40EDB9D17B00C38005CB9E5 /* second.png in Resources */,
 				A40EDB9E17B00C38005CB9E5 /* second@2x.png in Resources */,
 				A40EDB9F17B00C38005CB9E5 /* textfield_background.png in Resources */,
@@ -557,10 +592,8 @@
 				A4773EB017B58B40000E4CAC /* crosshair.png in Resources */,
 				A4773EB217B58BEB000E4CAC /* crosshair_small.png in Resources */,
 				A4773EB417B58BF0000E4CAC /* crosshair_small.png in Resources */,
-				A49C2DB2184A418C00F6AF13 /* Hunters_Edge-2.mobileprovision in Resources */,
 				A4773EC617B5BA1F000E4CAC /* JournalViewController.xib in Resources */,
 				A4773ECE17B5BE5D000E4CAC /* JournalDetailViewController.xib in Resources */,
-				A4D53CF617BBB8D900725921 /* JournalTableCell.xib in Resources */,
 				A4D53CF817BBCC3900725921 /* doe.jpg in Resources */,
 				A49FF14C17EB91C7007EBF8C /* chatCell.xib in Resources */,
 			);
@@ -585,6 +618,7 @@
 				E5743F2914E30154004BBD5C /* HESearchRadius.m in Sources */,
 				E5743F2D14E302A0004BBD5C /* HECircleView.m in Sources */,
 				E554D5C314E32EFB008D027A /* HEPost.m in Sources */,
+				B7A6222218CB6E2D005FE783 /* MyLogCell.m in Sources */,
 				C4FD6130172751E200F61563 /* HEWallPostsTableViewController.m in Sources */,
 				A40EDB8617B00B42005CB9E5 /* chatCell.m in Sources */,
 				A439309517B2DE5B00100010 /* Reachability.m in Sources */,
@@ -701,7 +735,7 @@
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_LABEL = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/HuntersEdge/HuntersEdge-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/trevorhodde/Desktop/HuntersEdge,
@@ -732,7 +766,7 @@
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_LABEL = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/HuntersEdge/HuntersEdge-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/trevorhodde/Desktop/HuntersEdge,
@@ -789,7 +823,7 @@
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_LABEL = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/HuntersEdge/HuntersEdge-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/trevorhodde/Desktop/HuntersEdge,
@@ -847,7 +881,7 @@
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_LABEL = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/HuntersEdge/HuntersEdge-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/trevorhodde/Desktop/HuntersEdge,
