@@ -19,4 +19,7 @@
 @property (strong, nonatomic) NSData *theimageData;
 @property (strong, nonatomic) UIImage *theImage;
 
+//AT
+@property (strong, nonatomic) UITextView *journalDetail;
+
 @end

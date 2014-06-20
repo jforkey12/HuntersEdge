@@ -18,6 +18,7 @@
 @synthesize date;
 @synthesize dateFormat;
 @synthesize theimageData;
+@synthesize journalDetail;
 
 
 - (void)awakeFromNib
